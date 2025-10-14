@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title id="content-title">Content Page</title>
+</head>
+<body class="content-page">
+    <div class="language-toggle">
+        <img src="images/nl-flag.svg" alt="Dutch" id="lang-nl" class="lang-toggle" data-lang="nl" />
+        <img src="images/en-flag.svg" alt="English" id="lang-en" class="lang-toggle" data-lang="en" />
+    </div>
+    <a href="index.html" class="back-arrow" id="back-link">&#8592; Back</a>
+    <div class="content">
+        <h1 id="content-header">Content Title</h1>
+        <p id="content-text">This is the content for the selected item.</p>
+    </div>
+    <div class="carousel" id="carousel">
+        <button class="prev" id="prevBtn">&#10094;</button>
+        <a id="imageLink" href="" target="_blank">
+            <img id="carouselImage" src="images/gallery/IM_9911-Pastoor-van-Ars-Den-Haag.jpg" alt="Image Carousel" />
+        </a>
+        <button class="next" id="nextBtn">&#10095;</button>
+    </div>
+
+    <script src="script.js" defer></script>
+    <script>
+        let currentIndex = 0;
+        let images = [];
+
+        // Fetch the JSON file
+        fetch("gallery.json")
+            .then((response) => response.json())
+            .then((data) => {
+                images = data.images;
+                showImage(currentIndex);
+            })
+            .catch((error) => console.error("Error fetching the JSON file:", error));
+
+        function showImage(index) {
+            const carouselImage = document.getElementById("carouselImage");
+            const imageLink = document.getElementById("imageLink");
+            const imageSrc = `images/gallery/${images[index]}`; // Set the source of the image
+            carouselImage.src = imageSrc;
+            imageLink.href = imageSrc; // Update the link to the image
+            carouselImage.classList.add("active"); // Add active class to show the image
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length; // Increment index and wrap around
+            showImage(currentIndex); // Show the new image
+        }
+
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length; // Decrement index and wrap around
+            showImage(currentIndex); // Show the new image
+        }
+
+        document.getElementById("nextBtn").addEventListener("click", nextImage);
+        document.getElementById("prevBtn").addEventListener("click", prevImage);
+    </script>
+</body>
+</html>

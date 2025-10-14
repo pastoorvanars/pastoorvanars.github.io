@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <title id="content-title">Content Page</title>
+        <script src="script.js" defer></script>
+        <script>
+            function loadWistiaScript() {
+                const script = document.createElement("script");
+                script.src = "https://fast.wistia.com/player.js";
+                script.async = true;
+
+                script.onerror = function () {
+                    document.getElementById("error-message").style.display = "block";
+                    document.getElementById("wistia-player-div").style.display = "none";
+                };
+
+                document.head.appendChild(script);
+            }
+
+            // Check if Wistia script can be loaded
+            loadWistiaScript();
+        </script>
+
+        <!--<script src="https://fast.wistia.com/player.js" async></script> -->
+        <script src="https://fast.wistia.com/embed/rifkn82hwr.js" async type="module"></script>
+
+        <style>
+            wistia-player[media-id="rifkn82hwr"]:not(:defined) {
+                background: center / contain no-repeat url("https://fast.wistia.com/embed/medias/rifkn82hwr/swatch");
+                display: block;
+                filter: blur(5px);
+                padding-top: 56.25%;
+            }
+        </style>
+    </head>
+    <body class="content-page">
+        <div class="language-toggle">
+            <img src="images/nl-flag.svg" alt="Dutch" id="lang-nl" class="lang-toggle" data-lang="nl" />
+            <img src="images/en-flag.svg" alt="English" id="lang-en" class="lang-toggle" data-lang="en" />
+        </div>
+        <a href="index.html" class="back-arrow" id="back-link">&#8592; Back</a>
+        <div class="content">
+            <h1 id="content-header">Content Title</h1>
+            <p id="content-text">This is the content for the selected item.</p>
+            <div id="wistia-player-div" class="wistia-player-container">
+                <wistia-player id="video" media-id="rifkn82hwr" seo="false" aspect="1.7777777777777777"></wistia-player>
+            </div>
+            <div id="error-message" class="review" style="display: none">
+                <p id="content-text2">
+                    The video could not be played. You can view it directly on the platform:
+                </p>
+                <p>
+                    <a id="platform-link" href="https://mvdbiezen.wistia.com/medias/rifkn82hwr" target="_blank">link</a
+                    >
+                </p>
+            </div>
+            <p id="content-text3">This is the content 2 for the selected item.</p>
+            <div class="small-letters"><p id="content-text4">cookie message</p></div>
+        </div>
+    </body>
+</html>

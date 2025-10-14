@@ -1,0 +1,363 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+a {
+    color: darkgreen; /* Change hyperlink color to dark green */
+    background-color: lightgrey; /* Add light grey background color */
+    /*padding: 5px; /* Optional: Add some padding for better appearance */
+    text-decoration: none; /* Optional: Remove underline from links */
+    /*border-radius: 4px; /* Optional: Add rounded corners */
+}
+
+a:hover {
+    background-color: darkgrey; /* Optional: Change background on hover */
+}
+
+.language-toggle {
+    position: absolute; /* Position it relative to the nearest positioned ancestor */
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    z-index: 1000; /* Ensure it appears above other elements */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Arrange items in a column */
+    align-items: flex-end; /* Align items to the right */
+}
+
+.language-toggle img {
+    width: 35px; /* Set the desired width */
+    height: auto; /* Maintain aspect ratio */
+    margin: 5px 0; /* Add vertical space between the images */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0; /* No gap between cells */
+    width: 100%;
+    height: 100vh; /* Full height of the viewport */
+}
+
+.grid-item {
+    position: relative; /* Position relative for overlay */
+    overflow: hidden; /* Ensures images fit within the grid item */
+    /*text-decoration: none; /* Remove underline from links */
+
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%; /* Fill the height of the grid item */
+    object-fit: cover; /* Cover the grid item while maintaining aspect ratio */
+    display: block; /* Remove bottom space */
+    transition: filter 0.3s ease; /* Smooth transition for blur effect */
+}
+
+.grid-item img {
+    filter: blur(2px); /* Blur effect always applied */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white; /* Text color */
+    opacity: 1; /* Always visible */
+    transition: opacity 0.3s ease; /* Smooth transition for overlay */
+    font-size: 1.25em; /* Increase font size - adjust as needed */
+    text-decoration: underline; /* Add underline to text */
+}
+
+.grid-item:hover img {
+    filter: blur(0); /* Remove blur effect on hover */
+}
+
+.grid-item:hover .overlay {
+    opacity: 0; /* Hide overlay on hover */
+}
+
+.hidden-on-small {
+    display: block; /* Hide on small screens */
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+        height: auto; /* Allow height to adjust based on content */
+    }
+    .column-section {
+        flex-direction: column; /* Stack columns vertically */
+    }
+
+    .column {
+        flex: none; /* Prevent columns from growing */
+        width: 100%; /* Make each column take full width */
+    }
+    .hidden-on-small {
+        display: block; /* Show on larger screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* 1 column on very small screens */
+        height: auto; /* Allow height to adjust based on content */
+    }
+        .hidden-on-small {
+        display: none; /* Show on larger screens */
+    }
+}
+
+/* Styles for Content Pages */
+body.content-page {
+    background-color: #4a4a4a; /* Dark grey background */
+    color: white; /* White text color */
+}
+
+.back-arrow {
+    display: inline-block;
+    margin: 20px; /* Space around the arrow */
+    font-size: 1.5em; /* Size of the arrow */
+    text-decoration: none; /* Remove underline */
+    color: black; /* Color of the arrow */
+    background-color: #d3d3d3; /* Light grey background for the top bar */
+    padding: 10px; /* Padding around the arrow */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.content {
+    padding: 20px; /* Padding for content */
+}
+
+.responsive-image {
+    max-width: 100%; /* Ensures the image does not exceed the column width */
+    height: auto; /* Maintains the aspect ratio */
+}
+
+.column-section {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    margin: 10px; /* Optional: Add some margin around the section */
+}
+
+.column {
+    flex: 1; /* Each column takes equal space */
+    min-width: 300px; /* Set a minimum width to prevent too narrow columns */
+    padding: 10px; /* Optional: Add some padding inside the columns */
+    box-sizing: border-box; /* Ensures padding is included in width */
+}
+
+/* Form */
+.form {
+    max-width: 600px;
+    /*margin: 20px auto;*/
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: grey; /* Set label text color to dark grey */
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: darkgreen;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: darkgreen;
+}
+
+/* end form */
+
+/* popup css */
+
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 2% auto; /* 2% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    max-width: 600px; /* Increased maximum width */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#review-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#review-form label {
+    margin-top: 10px;
+}
+
+#review-form input,
+#review-form textarea {
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#review-form button {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: darkgreen;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#review-form button:hover {
+    background-color: #005700; /* Darker green on hover */
+}
+
+.reviews-container {
+    display: flex; /* Use Flexbox for layout */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
+    justify-content: space-between; /* Space between items */
+    gap: 20px; /* Optional: Space between reviews */
+    margin-top: 20px; /* Space above the reviews container */
+}
+
+.review {
+    background-color: #f0f0f0; /* Light grey background color */
+    border: 1px solid #ccc; /* Optional: Border around each review */
+    border-radius: 5px; /* Optional: Rounded corners */
+    padding: 15px; /* Padding inside the review */
+    flex: 1 1 calc(40% - 20px); /* Allow reviews to grow and shrink, with a base width of 30% */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    color: #222222; /* Light grey text color */
+}
+
+.thumbnail {
+    width: 100px; /* Set thumbnail size */
+    height: auto;
+    margin-right: 10px;
+}
+
+/* end popup reviews */
+
+/* player */
+.wistia-player-container {
+    max-width: 80%; /* Set a maximum width for the player */
+    margin: 20px auto; /* Center the player with margin on top and bottom */
+    padding: 10px; /* Optional: Add padding around the player */
+    border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+    border-radius: 8px; /* Optional: Rounded corners */
+    background-color: #f9f9f9; /* Optional: Light background color */
+}
+
+.small-letters {
+    
+
+    padding: 15px; /* Padding inside the review */
+    flex: 1 1 calc(40% - 20px); /* Allow reviews to grow and shrink, with a base width of 30% */
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    color: #EEEEEE; /* Light grey text color */
+    font-size: small;
+    text-align: right;
+}
+
+
+/* gallery */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+.gallery img {
+    width: 200px;
+    margin: 10px;
+}
+.carousel {
+    position: relative;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.carousel img {
+    width: 100%;
+    display: none; /* Hide images by default */
+}
+
+.carousel img.active {
+    display: block; /* Show the active image */
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    padding: 10px;
+}
+.prev {
+    left: 10px;
+}
+.next {
+    right: 10px;
+}

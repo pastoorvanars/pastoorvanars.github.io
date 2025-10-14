@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles.css" />
+        <title id="content-title">Content Page</title>
+        <script src="script.js"></script>
+        <!-- Add the reCAPTCHA script -->
+        <!--<script src="https://www.google.com/recaptcha/api.js" async defer></script>-->
+        <script async src="https://tally.so/widgets/embed.js"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                /*
+                const reviewPopup = document.getElementById("review-popup");
+                const openPopupLink = document.getElementById("open-review-popup");
+                const closePopupButton = document.getElementById("close-popup");
+
+                openPopupLink.addEventListener("click", (event) => {
+                    event.preventDefault(); // Prevent default link behavior
+                    reviewPopup.style.display = "block"; // Show the popup
+                });
+
+                closePopupButton.addEventListener("click", () => {
+                    reviewPopup.style.display = "none"; // Hide the popup
+                });
+
+                window.addEventListener("click", (event) => {
+                    if (event.target === reviewPopup) {
+                        reviewPopup.style.display = "none"; // Hide the popup
+                    }
+                });
+                
+
+                document.getElementById("review-form").addEventListener("submit", (event) => {
+                    event.preventDefault(); // Prevent default form submission
+
+                    const name = document.getElementById("reviewer-name").value;
+
+                    const comment = document.getElementById("review-comment").value;
+                    const fileInput = document.getElementById("review-photo");
+                    const file = fileInput.files[0]; // Get the uploaded file
+
+                    console.log("Review submitted:", { name, comment, file });
+
+                    // Optionally, you can clear the form fields
+                    document.getElementById("reviewer-name").value = "";
+                    document.getElementById("review-comment").value = "";
+                    fileInput.value = ""; // Clear the file input
+
+                    // Close the popup after submission
+                    reviewPopup.style.display = "none";
+                });
+                */
+
+                /* guestbook loading */
+
+                fetch("guestbook.json")
+                    .then((response) => response.json())
+                    .then((data) => {
+                        const guestbookDiv = document.getElementById("guestbook");
+                        data.forEach((entry) => {
+                            const entryDiv = document.createElement("div");
+                            entryDiv.classList.add("review");
+
+                            const imageUrl = entry.Image;
+                            const nameElement = document.createElement("h3");
+                            nameElement.classList.add("review-name");
+                            nameElement.textContent = entry.Name;
+
+                            const dateElement = document.createElement("p");
+                            dateElement.classList.add("review-date");
+                            dateElement.textContent = new Date(entry.Date).toLocaleDateString();
+
+                            const commentElement = document.createElement("p");
+                            commentElement.classList.add("review-comment");
+                            commentElement.textContent = entry.Description;
+
+                            const imgElement = document.createElement("img");
+                            imgElement.src = imageUrl;
+                            imgElement.alt = entry.Name;
+                            imgElement.className = "thumbnail";
+                            //entryDiv.appendChild(imgElement);
+                            entryDiv.appendChild(nameElement);
+                            entryDiv.appendChild(dateElement);
+                            entryDiv.appendChild(commentElement);
+
+                            guestbookDiv.appendChild(entryDiv);
+                        });
+                    })
+                    .catch((error) => console.error("Error fetching guestbook data:", error));
+
+                /* end load guestbook */
+            });
+        </script>
+    </head>
+    <body class="content-page">
+        <div class="language-toggle">
+            <img src="images/nl-flag.svg" alt="Dutch" id="lang-nl" class="lang-toggle" data-lang="nl" />
+            <img src="images/en-flag.svg" alt="English" id="lang-en" class="lang-toggle" data-lang="en" />
+        </div>
+        <a href="index.html" class="back-arrow" id="back-link">&#8592; Back</a>
+        <div class="content">
+            <h1 id="content-header">Content Title</h1>
+            <p id="content-text">This is the content for the selected item.</p>
+        </div>
+        <div class="content">
+            
+<button data-tally-open="mBMvWR" data-tally-emoji-text="👋" data-tally-emoji-animation="wave" id="open-review-popup">Nieuwe review</button>
+<!--
+            <a href="#" id="open-review-popup">Nieuwe Review</a> -->
+            <div class="reviews-container" id="guestbook"></div>
+        </div>
+
+        <!-- Popup -->
+        <!--
+        <div id="review-popup" class="popup">
+            
+            <div class="popup-content">
+                <span class="close-button" id="close-popup">&times;</span>
+                <h2>Leave a Review</h2>
+                <iframe data-tally-src="https://tally.so/embed/mBMvWR?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="100" frameborder="0" marginheight="0" marginwidth="0" title="Ars Guestbook"></iframe>
+<script>var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.body.appendChild(s);}</script>
+                <!--
+                <form id="review-form">
+                    <label for="reviewer-name">Name:</label>
+                    <input type="text" id="reviewer-name" name="reviewer-name" required />
+                    <label for="visit-date">Date of your visit:</label>
+                    <input type="date" id="visit-date" name="visit-date" required />
+                    <label for="reviewer-url">URL social profile (facebook/linkedin/etc.):</label>
+                    <input type="url" id="reviewer-url" name="reviewer-url" required />
+
+                    <label for="review-comment">Comment:</label>
+                    <textarea id="review-comment" name="review-comment" required></textarea>
+
+                    <label for="review-photo">Upload your favorite photo:</label>
+                    <input type="file" id="review-photo" name="review-photo" accept="image/*" />
+
+                    <div class="g-recaptcha" data-sitekey="6LcgTtArAAAAANZJ12_jPkvF0zSle2_gOMt5k6vC"></div>
+
+                    <button type="submit">Submit</button>
+                </form> -->
+    <!--        </div>
+        </div> -->
+        <!-- End Popup -->
+    </body>
+</html>
