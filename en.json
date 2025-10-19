@@ -36,7 +36,7 @@
     },
     "sectionVisit": {
         "header": "Guided tour",
-        "content": "If you would like to visit and have a guided tour, you can fill out this form at least 48 hrs before the requested date and time. <b>The appointment must be confirmed before you come.</b> If you do not need a guided tour but would like to take a look around, come after mass. See the <a href='community.html'>Community page</a> for updated mass times.<br/><br/>The address of the church is <a href='https://maps.app.goo.gl/Ez9vqpUgdPTUFo8k7' target='_blank' rel='noopener noreferrer'>Aaltje Noordewierstraat 4 2551 GA Den Haag</a>.<br/><br/>",
+        "content": "If you would like to visit and have a guided tour, you can fill out this form at least 48 hrs before the requested date and time. <b>The appointment must be confirmed before you come.</b> If you do not need a guided tour but would like to take a look around, feel free come after mass. See the <a href='community.html'>Community page</a> for updated mass times.<br/><br/>The address of the church is <a href='https://maps.app.goo.gl/Ez9vqpUgdPTUFo8k7' target='_blank' rel='noopener noreferrer'>Aaltje Noordewierstraat 4 2551 GA Den Haag</a>.<br/><br/>",
         "content2": "At the end of the tour, it is possible to buy the (Dutch) book Pastoor van Arskerk by Francis Strauven."
     },
     "sectionGallery": {
@@ -46,13 +46,6 @@
     "sectionInformation": {
         "header": "Information",
         "content": "This website is built and mantained by the Friends of the Pastor of Ars Church Foundation.<br/> <br/>"        
-    },
-    "form": {
-        "name": "First and last name",
-        "email": "Email address",
-        "phone": "Phone number",
-        "submit": "Submit",
-        "date": "Preferred date and time"
     },
     "back": "Back to start"
 }

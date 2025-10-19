@@ -37,7 +37,7 @@
     },
     "sectionVisit": {
         "header": "Rondleiding",
-        "content": "Voor het bezichtigen van het kerkgebouw met een rondleiding vult u minimaal 48 uur van tevoren dit formulier in. <br><b>Het bezoek gaat alleen door als deze afspraak bevestigd is.</b> Een vrijwillige donatie wordt gewaardeerd. <br/><br/>Daarnaast is de kerk uiteraard geopend tijdens reguliere vieringen. Voor en na de vieringen is er ook de mogelijkheid de kerk te bezichtigen. Zie de <a href='community.html'>Gemeenschap</a> pagina voor actuele tijden.<br><br>Het adres van de kerk is <a href='https://maps.app.goo.gl/Ez9vqpUgdPTUFo8k7' target='_blank' rel='noopener noreferrer'>Aaltje Noordewierstraat 4 2551 GA Den Haag</a>.",
+        "content": "Wilt u graag een keer rustig rondkijken aan de binnenkant van de kerk? Dat kan! <br/><br/>Voor het bezichtigen van het kerkgebouw met een rondleiding vult u minimaal 48 uur van tevoren dit formulier in. <br><b>Het bezoek gaat alleen door als deze afspraak bevestigd is.</b> Een vrijwillige donatie wordt gewaardeerd. <br/><br/>Daarnaast is de kerk uiteraard geopend tijdens reguliere vieringen. Voor en na de vieringen is er ook de mogelijkheid de kerk te bezichtigen. Zie de <a href='community.html'>Gemeenschap</a> pagina voor actuele tijden.<br><br>Het adres van de kerk is <a href='https://maps.app.goo.gl/Ez9vqpUgdPTUFo8k7' target='_blank' rel='noopener noreferrer'>Aaltje Noordewierstraat 4 2551 GA Den Haag</a>.",
         "content2": "Aan het einde van de rondleiding is er de mogelijkheid om het boek Pastoor van Arskerk 'een tijdloze sacrale ruimte aan de hand van Aldo van Eyck' door <a href='https://nl.wikipedia.org/wiki/Francis_Strauven' target='_blank' rel='noopener noreferrer'>Francis Strauven</a> te kopen."
     },
     "sectionGallery": {
@@ -46,14 +46,7 @@
     },
     "sectionInformation": {
         "header": "Informatie",
-        "content": "Deze site wordt beheer door Stichting Vrienden van de Ars. ANBI informatie. Foto van het team?<br/><br/>Boek te koop in de kerk. AVG over gegevens die via de formulieren worden verstuurd. Tikkie URL?" 
-    },
-    "form": {
-        "name": "Voor- en achternaam",
-        "email": "E-mail adres",
-        "phone": "Telefoonnummer",
-        "submit": "Verzenden",
-        "date": "Gewenste datum en tijd"
+        "content": "Deze site wordt beheer door Stichting Vrienden van de Pastoor van Ars, een stichting met <a href='https://anbi.rkcn.nl/publicaties/ROT15049' target='_blank' rel='noopener noreferrer'>ANBI keurmerk</a>. <br/><br/><ul><li>Foto van het team?</li><li>AVG over gegevens die via de formulieren worden verstuurd</li><li>Tikkie URL?</li><li>Bepaalde foto's met dank aan <a href='https://www.flickr.com/photos/piet_musterd/' target='_blank' rel='noopener noreferrer'>Pieter Musterd</a></li></ul><br/><br/>Wilt u contact opnemen? Vul dan bijgaand formulier in. Voor een bezichtiging van de kerk, zie <a href='plan-a-visit.html'>deze pagina</a>" 
     },
     "back": "Terug naar begin"
 }

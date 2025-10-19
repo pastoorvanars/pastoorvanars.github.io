@@ -22,12 +22,15 @@ async function loadTranslations(lang) {
     const overlays = document.querySelectorAll(".overlay");
     overlays[0].innerText = data.sectionCommunity.header;
     overlays[1].innerText = data.sectionFilm.header;
-    overlays[2].innerText = data.sectionBuilding.header;
+	overlays[2].innerText = data.sectionVisit.header;
+    
+	
     overlays[3].innerText = data.sectionPastor.header;
     
     overlays[4].innerText = data.sectionHeart.header;
-    overlays[5].innerText = data.sectionGuestbook.header;
-    overlays[6].innerText = data.sectionVisit.header;
+	overlays[5].innerText = data.sectionBuilding.header;
+    overlays[6].innerText = data.sectionGuestbook.header;
+    
     overlays[7].innerText = data.sectionGallery.header;
     overlays[8].innerText = data.sectionInformation.header;
 }
