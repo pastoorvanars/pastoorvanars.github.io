@@ -1,119 +1,132 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="styles.css" />
-        <title id="content-title">Content Page</title>
-        <script src="script.js"></script>
-        <!-- Add the reCAPTCHA script -->
-        <!--<script src="https://www.google.com/recaptcha/api.js" async defer></script>-->
-        <script async src="https://tally.so/widgets/embed.js"></script>
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                /*
-                const reviewPopup = document.getElementById("review-popup");
-                const openPopupLink = document.getElementById("open-review-popup");
-                const closePopupButton = document.getElementById("close-popup");
 
-                openPopupLink.addEventListener("click", (event) => {
-                    event.preventDefault(); // Prevent default link behavior
-                    reviewPopup.style.display = "block"; // Show the popup
-                });
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title id="content-title">Content Page</title>
+    <script src="script.js"></script>
+    <!-- Add the reCAPTCHA script -->
+    <!--<script src="https://www.google.com/recaptcha/api.js" async defer></script>-->
+    <script async src="https://tally.so/widgets/embed.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            /*
+            const reviewPopup = document.getElementById("review-popup");
+            const openPopupLink = document.getElementById("open-review-popup");
+            const closePopupButton = document.getElementById("close-popup");
 
-                closePopupButton.addEventListener("click", () => {
-                    reviewPopup.style.display = "none"; // Hide the popup
-                });
-
-                window.addEventListener("click", (event) => {
-                    if (event.target === reviewPopup) {
-                        reviewPopup.style.display = "none"; // Hide the popup
-                    }
-                });
-                
-
-                document.getElementById("review-form").addEventListener("submit", (event) => {
-                    event.preventDefault(); // Prevent default form submission
-
-                    const name = document.getElementById("reviewer-name").value;
-
-                    const comment = document.getElementById("review-comment").value;
-                    const fileInput = document.getElementById("review-photo");
-                    const file = fileInput.files[0]; // Get the uploaded file
-
-                    console.log("Review submitted:", { name, comment, file });
-
-                    // Optionally, you can clear the form fields
-                    document.getElementById("reviewer-name").value = "";
-                    document.getElementById("review-comment").value = "";
-                    fileInput.value = ""; // Clear the file input
-
-                    // Close the popup after submission
-                    reviewPopup.style.display = "none";
-                });
-                */
-
-                /* guestbook loading */
-
-                fetch("guestbook.json")
-                    .then((response) => response.json())
-                    .then((data) => {
-                        const guestbookDiv = document.getElementById("guestbook");
-                        data.forEach((entry) => {
-                            const entryDiv = document.createElement("div");
-                            entryDiv.classList.add("review");
-
-                            const imageUrl = entry.Image;
-                            const nameElement = document.createElement("h3");
-                            nameElement.classList.add("review-name");
-                            nameElement.textContent = entry.Name;
-
-                            const dateElement = document.createElement("p");
-                            dateElement.classList.add("review-date");
-                            dateElement.textContent = new Date(entry.Date).toLocaleDateString();
-
-                            const commentElement = document.createElement("p");
-                            commentElement.classList.add("review-comment");
-                            commentElement.textContent = entry.Description;
-
-                            const imgElement = document.createElement("img");
-                            imgElement.src = imageUrl;
-                            imgElement.alt = entry.Name;
-                            imgElement.className = "thumbnail";
-                            //entryDiv.appendChild(imgElement);
-                            entryDiv.appendChild(nameElement);
-                            entryDiv.appendChild(dateElement);
-                            entryDiv.appendChild(commentElement);
-
-                            guestbookDiv.appendChild(entryDiv);
-                        });
-                    })
-                    .catch((error) => console.error("Error fetching guestbook data:", error));
-
-                /* end load guestbook */
+            openPopupLink.addEventListener("click", (event) => {
+                event.preventDefault(); // Prevent default link behavior
+                reviewPopup.style.display = "block"; // Show the popup
             });
-        </script>
-    </head>
-    <body class="content-page">
-        <div class="language-toggle">
-            <img src="images/nl-flag.svg" alt="Dutch" id="lang-nl" class="lang-toggle" data-lang="nl" />
-            <img src="images/en-flag.svg" alt="English" id="lang-en" class="lang-toggle" data-lang="en" />
-        </div>
-        <a href="index.html" class="back-arrow" id="back-link">&#8592; Back</a>
-        <div class="content">
-            <h1 id="content-header">Content Title</h1>
-            <p id="content-text">This is the content for the selected item.</p>
-        </div>
-        <div class="content">
-            <button
-                data-tally-open="mBMvWR"
-                data-tally-emoji-text="👋"
-                data-tally-emoji-animation="wave"
-                id="open-review-popup">
-                Nieuwe review
-            </button>
 
-            <div class="reviews-container" id="guestbook"></div>
-        </div>
-    </body>
+            closePopupButton.addEventListener("click", () => {
+                reviewPopup.style.display = "none"; // Hide the popup
+            });
+
+            window.addEventListener("click", (event) => {
+                if (event.target === reviewPopup) {
+                    reviewPopup.style.display = "none"; // Hide the popup
+                }
+            });
+            
+
+            document.getElementById("review-form").addEventListener("submit", (event) => {
+                event.preventDefault(); // Prevent default form submission
+
+                const name = document.getElementById("reviewer-name").value;
+
+                const comment = document.getElementById("review-comment").value;
+                const fileInput = document.getElementById("review-photo");
+                const file = fileInput.files[0]; // Get the uploaded file
+
+                console.log("Review submitted:", { name, comment, file });
+
+                // Optionally, you can clear the form fields
+                document.getElementById("reviewer-name").value = "";
+                document.getElementById("review-comment").value = "";
+                fileInput.value = ""; // Clear the file input
+
+                // Close the popup after submission
+                reviewPopup.style.display = "none";
+            });
+            */
+
+            /* guestbook loading */
+
+            fetch("guestbook.json")
+                .then((response) => response.json())
+                .then((data) => {
+                    const guestbookDiv = document.getElementById("guestbook");
+                    data.forEach((entry) => {
+                        const entryDiv = document.createElement("div");
+                        entryDiv.classList.add("review");
+
+                        const imageUrl = entry.Image;
+
+                        const nameElement = document.createElement("h3");
+                        nameElement.classList.add("review-name");
+
+                        if (entry.URL) {
+                            const link = document.createElement("a");
+                            link.href = entry.URL;
+                            link.textContent = entry.Name;
+                            link.target = "_blank"; // opens in new tab
+                            link.classList.add("review-link");
+                            nameElement.appendChild(link);
+                        } else {
+                            nameElement.textContent = entry.Name;
+                        }
+
+                        const dateElement = document.createElement("p");
+                        dateElement.classList.add("review-date");
+                        dateElement.textContent = new Date(entry.Date).toLocaleDateString();
+
+                        const commentElement = document.createElement("p");
+                        commentElement.classList.add("review-comment");
+                        commentElement.textContent = entry.Description;
+
+                        const imgElement = document.createElement("img");
+                        imgElement.src = imageUrl;
+                        imgElement.alt = entry.Name;
+                        imgElement.className = "thumbnail";
+                        // entryDiv.appendChild(imgElement);
+
+                        entryDiv.appendChild(nameElement);
+                        entryDiv.appendChild(dateElement);
+                        entryDiv.appendChild(commentElement);
+
+                        guestbookDiv.appendChild(entryDiv);
+
+                    });
+                })
+                .catch((error) => console.error("Error fetching guestbook data:", error));
+
+            /* end load guestbook */
+        });
+    </script>
+</head>
+
+<body class="content-page">
+    <div class="language-toggle">
+        <img src="images/nl-flag.svg" alt="Dutch" id="lang-nl" class="lang-toggle" data-lang="nl" />
+        <img src="images/en-flag.svg" alt="English" id="lang-en" class="lang-toggle" data-lang="en" />
+    </div>
+    <a href="index.html" class="back-arrow" id="back-link">&#8592; Back</a>
+    <div class="content">
+        <h1 id="content-header">Content Title</h1>
+        <p id="content-text">This is the content for the selected item.</p>
+    </div>
+    <div class="content">
+        <button data-tally-open="mBMvWR" data-tally-emoji-text="👋" data-tally-emoji-animation="wave"
+            id="open-review-popup">
+            Nieuwe review
+        </button>
+
+        <div class="reviews-container" id="guestbook"></div>
+    </div>
+</body>
+
 </html>

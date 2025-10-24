@@ -16,6 +16,13 @@ a {
     /*border-radius: 4px; /* Optional: Add rounded corners */
 }
 
+.review-link {
+    color: darkgreen;
+    text-decoration: underline;
+    font-weight: bold;
+    background-color: transparent; /* override the light grey background */
+}
+
 a:hover {
     background-color: darkgrey; /* Optional: Change background on hover */
 }
