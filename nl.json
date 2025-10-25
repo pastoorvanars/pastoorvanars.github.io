@@ -21,7 +21,7 @@
     },
     "sectionGuestbook": {
         "header": "Gastenboek",
-        "content": "Hieronder vindt u getuigenissen van de laatste bezoekers... Klik op de link Nieuwe Review om uw ervaring achter te laten. </b></b>Uw review wordt pas geplaatst nadat deze is gevalideerd."
+        "content": "Hieronder vindt u getuigenissen van de laatste bezoekers... Klik hier op de link <a href='#tally-open=mVR0jE&tally-emoji-text=👋&tally-emoji-animation=wave'>Nieuwe review</a> om uw ervaring achter te laten. </b></b>Uw review wordt pas geplaatst nadat deze is gevalideerd."
     },
     "sectionHeart": {
         "header": "Het hart",

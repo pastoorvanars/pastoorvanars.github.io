@@ -7,53 +7,9 @@
     <link rel="stylesheet" href="styles.css" />
     <title id="content-title">Content Page</title>
     <script src="script.js"></script>
-    <!-- Add the reCAPTCHA script -->
-    <!--<script src="https://www.google.com/recaptcha/api.js" async defer></script>-->
     <script async src="https://tally.so/widgets/embed.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            /*
-            const reviewPopup = document.getElementById("review-popup");
-            const openPopupLink = document.getElementById("open-review-popup");
-            const closePopupButton = document.getElementById("close-popup");
-
-            openPopupLink.addEventListener("click", (event) => {
-                event.preventDefault(); // Prevent default link behavior
-                reviewPopup.style.display = "block"; // Show the popup
-            });
-
-            closePopupButton.addEventListener("click", () => {
-                reviewPopup.style.display = "none"; // Hide the popup
-            });
-
-            window.addEventListener("click", (event) => {
-                if (event.target === reviewPopup) {
-                    reviewPopup.style.display = "none"; // Hide the popup
-                }
-            });
-            
-
-            document.getElementById("review-form").addEventListener("submit", (event) => {
-                event.preventDefault(); // Prevent default form submission
-
-                const name = document.getElementById("reviewer-name").value;
-
-                const comment = document.getElementById("review-comment").value;
-                const fileInput = document.getElementById("review-photo");
-                const file = fileInput.files[0]; // Get the uploaded file
-
-                console.log("Review submitted:", { name, comment, file });
-
-                // Optionally, you can clear the form fields
-                document.getElementById("reviewer-name").value = "";
-                document.getElementById("review-comment").value = "";
-                fileInput.value = ""; // Clear the file input
-
-                // Close the popup after submission
-                reviewPopup.style.display = "none";
-            });
-            */
-
             /* guestbook loading */
 
             fetch("guestbook.json")
@@ -120,11 +76,6 @@
         <p id="content-text">This is the content for the selected item.</p>
     </div>
     <div class="content">
-        <button data-tally-open="mBMvWR" data-tally-emoji-text="👋" data-tally-emoji-animation="wave"
-            id="open-review-popup">
-            Nieuwe review
-        </button>
-
         <div class="reviews-container" id="guestbook"></div>
     </div>
 </body>

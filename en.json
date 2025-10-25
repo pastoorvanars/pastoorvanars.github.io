@@ -20,7 +20,7 @@
     },
     "sectionGuestbook": {
         "header": "Guestbook",
-        "content": "Read here the testimonals of previous visitors... Click on the link New Review to submit your own experience."
+        "content": "Read here the testimonals of previous visitors... Click here on the link <a href='#tally-open=mBMvWR&tally-emoji-text=👋&tally-emoji-animation=wave'>New Review</a> to submit your own experience. We will add it to the site after validation."
     },
     "sectionHeart": {
         "header": "The heart",
