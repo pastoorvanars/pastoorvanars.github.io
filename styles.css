@@ -16,13 +16,6 @@ a {
     /*border-radius: 4px; /* Optional: Add rounded corners */
 }
 
-.review-link {
-    color: darkgreen;
-    text-decoration: underline;
-    font-weight: bold;
-    background-color: transparent; /* override the light grey background */
-}
-
 a:hover {
     background-color: darkgrey; /* Optional: Change background on hover */
 }
@@ -170,9 +163,9 @@ body.content-page {
 }
 
 /* Form */
+/*
 .form {
     max-width: 600px;
-    /*margin: 20px auto;*/
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -182,7 +175,7 @@ body.content-page {
 label {
     display: block;
     margin-bottom: 8px;
-    color: grey; /* Set label text color to dark grey */
+    color: grey; 
 }
 
 input {
@@ -205,7 +198,7 @@ button {
 button:hover {
     background-color: darkgreen;
 }
-
+*/
 /* end form */
 
 /* popup css */
@@ -246,37 +239,6 @@ button:hover {
     cursor: pointer;
 }
 
-#review-form {
-    display: flex;
-    flex-direction: column;
-}
-
-#review-form label {
-    margin-top: 10px;
-}
-
-#review-form input,
-#review-form textarea {
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-#review-form button {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: darkgreen;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-#review-form button:hover {
-    background-color: #005700; /* Darker green on hover */
-}
-
 .reviews-container {
     display: flex; /* Use Flexbox for layout */
     flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
@@ -293,6 +255,37 @@ button:hover {
     flex: 1 1 calc(40% - 20px); /* Allow reviews to grow and shrink, with a base width of 30% */
     box-sizing: border-box; /* Include padding and border in the element's total width */
     color: #222222; /* Light grey text color */
+}
+
+.highlighted-review {
+    border: 3px solid darkgreen;
+    /*background-color: #e6ffe6; /* Slight green tint to stand out */
+    padding: 15px;
+    border-radius: 5px;
+    flex: 1 1 calc(40% - 20px);
+    box-sizing: border-box;
+    color: #222222;
+}
+
+.review-link {
+    color: darkgreen;
+    text-decoration: underline;
+    font-weight: bold;
+    background-color: transparent; /* override the light grey background */
+}
+
+.linkedin-share-button {
+    background-color: #0077b5;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.linkedin-share-button:hover {
+    background-color: #005582;
 }
 
 .thumbnail {
