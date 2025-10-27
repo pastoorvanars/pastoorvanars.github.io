@@ -7,6 +7,7 @@ const sectionMap = {
     film: "sectionFilm",
     "plan-a-visit": "sectionVisit",
     gallery: "sectionGallery",
+    "rent-space": "sectionRentSpace",
     info: "sectionInformation"
 };
 
@@ -23,15 +24,11 @@ async function loadTranslations(lang) {
     overlays[0].innerText = data.sectionCommunity.header;
     overlays[1].innerText = data.sectionFilm.header;
 	overlays[2].innerText = data.sectionVisit.header;
-    
-	
     overlays[3].innerText = data.sectionPastor.header;
-    
     overlays[4].innerText = data.sectionHeart.header;
 	overlays[5].innerText = data.sectionBuilding.header;
     overlays[6].innerText = data.sectionGuestbook.header;
-    
-    overlays[7].innerText = data.sectionGallery.header;
+    overlays[7].innerText = data.sectionRentSpace.header; //was Gallery
     overlays[8].innerText = data.sectionInformation.header;
 }
 
@@ -76,14 +73,7 @@ async function loadContent(section, lang) {
     if (document.getElementById("form-submit")) {
         document.getElementById("form-submit").textContent = data.form.submit; // Update submit button text
     }
-    /*
     
-    // Check for additional content
-    const contentText2 = document.getElementById('content-text2');
-    if (contentText2) {
-        contentText2.innerHTML = data[section].content2; // Update second content if it exists
-    }
-*/
     // Call setupLanguageToggle to re-establish event listeners
     // setupLanguageToggle();
 }
@@ -121,6 +111,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     if (sectionMap[pageName]) {
+        console.log("section = -", sectionMap[pageName], "-");
         await loadContent(sectionMap[pageName], lang); // Load content for the specific page
     }
 

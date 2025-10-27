@@ -43,6 +43,10 @@
         "header": "Gallery",
         "content": "<br/>Thanks to <a href='https://kerkfotografie.nl/pastoor-van-ars-den-haag/'  target='_blank' rel='noopener noreferrer'>Kerkfotografie Nederland</a>."
     },
+    "sectionRentSpace": {
+        "header": "Rent a space",
+        "content": "TODO translate..."
+    },       
     "sectionInformation": {
         "header": "Information",
         "content": "This website is built and mantained by the Friends of the Pastor of Ars Church Foundation.<br/> <br/>"        
