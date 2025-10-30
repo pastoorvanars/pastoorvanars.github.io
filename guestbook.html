@@ -50,6 +50,9 @@
 
         function createEntryDiv(entry, isHighlighted) {
             const entryDiv = document.createElement("div");
+            const textDiv = document.createElement("div");
+            textDiv.classList.add("review-content");
+
             entryDiv.classList.add("review");
             if (isHighlighted) {
                 entryDiv.classList.add("highlighted-review");
@@ -77,18 +80,13 @@
             commentElement.classList.add("review-comment");
             commentElement.textContent = entry.Description;
 
-            //const imgElement = document.createElement("img");
-            //imgElement.src = entry.Image;
-            //imgElement.alt = entry.Name;
-            //imgElement.className = "thumbnail";
-
-            entryDiv.appendChild(nameElement);
-            entryDiv.appendChild(dateElement);
-            entryDiv.appendChild(commentElement);
+            textDiv.appendChild(nameElement);
+            textDiv.appendChild(dateElement);
+            textDiv.appendChild(commentElement);
 
             if (entry.URL && entry.URL.includes("linkedin.com/in/") && isHighlighted) {
                 const pageUrl = `https://test.pastoorvanarskijkduin.nl/guestbook.html?id=${entry.Id}`;
-                const shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(pageUrl)}&title=Ik%20was%20in%20de%20pastoor%20van%20Ars%20by%20${encodeURIComponent(entry.Name)}&summary=${encodeURIComponent(entry.Description)}`;
+                const shareUrl = `https://www.linkedin.com/shareArticle/?mini=true&url=${encodeURIComponent(pageUrl)}`;
 
                 const shareLink = document.createElement("a");
                 shareLink.href = shareUrl;
@@ -96,11 +94,43 @@
                 shareLink.target = "_blank";
                 shareLink.classList.add("linkedin-share-button");
 
-                entryDiv.appendChild(shareLink);
+                textDiv.appendChild(shareLink);
             }
-            //entryDiv.appendChild(imgElement);
+            entryDiv.appendChild(textDiv);
 
+            if (entry.Thumbnail) {
+                const imgElement = document.createElement("img");
+
+                imgElement.src = entry.Thumbnail;
+                imgElement.alt = entry.Name;
+                imgElement.className = "thumbnail";
+
+                // Add click event to open full image in modal
+                imgElement.addEventListener("click", () => {
+                    openImageModal(entry.Image);
+                });
+
+                entryDiv.appendChild(imgElement);
+            }
             return entryDiv;
+        }
+
+        function openImageModal(imageSrc) {
+            const modal = document.createElement("div");
+            modal.className = "image-modal";
+            //modal.title = "Klik om te sluiten";
+
+            const fullImage = document.createElement("img");
+            fullImage.src = imageSrc;
+            fullImage.className = "modal-image";
+
+            modal.appendChild(fullImage);
+            document.body.appendChild(modal);
+
+            // Close modal on click
+            modal.addEventListener("click", () => {
+                document.body.removeChild(modal);
+            });
         }
     </script>
 </head>

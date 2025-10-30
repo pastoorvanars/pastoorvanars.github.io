@@ -4,21 +4,26 @@
     "Name": "Maarten vd Biezen",
     "Date": "2025-01-24",
     "URL": "https://nl.linkedin.com/in/maarten-van-der-biezen-87a4a5b",
-    "Description": "In eerste instantie moet je door het beton leren heenkijken. Het licht van boven vind ik erg mooi. Bedankt Christiaan voor de rondleiding!",
-    "Image": ""
+    "Description": "In eerste instantie moet je door het beton leren heenkijken. Het licht van boven vind ik erg mooi. Bijgevoegd een fotootje wat ik gemaakt heb. Bedankt Christiaan voor de rondleiding.",
+    "Image": "images/guestbook/IMG_5633.jpeg",
+    "Thumbnail": "images/guestbook/thumb_IMG_5633_150x200.png"
   },
   {
     "Id": "a7e2b4c9-3d1f-4e6a-9f8b-6c2d3a1b7e9c",
     "Name": "Rosa Costa",
     "Date": "2025-10-01",
     "URL": "https://nl.linkedin.com/in/rosa-van-der-biezen-093b8218",
-    "Description": "Sem palavras..."
+    "Description": "Sem palavras...",
+    "Image":"",
+    "Thumbnail":""
   },
   {
     "Id": "a7e2b4c9-3d1f-4e6a-9f8b-6c2d3a1b7e9d",
     "Name": "Sofia",
     "Date": "2025-10-24",
     "URL": "",
-    "Description": "Prachtige kerk met natuurlijk lekkere koekjes!"
+    "Description": "Prachtige kerk met natuurlijk lekkere koekjes!",
+    "Image":"",
+    "Thumbnail":""
   }
 ]

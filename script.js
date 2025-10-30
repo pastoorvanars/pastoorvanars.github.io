@@ -55,6 +55,7 @@ async function loadContent(section, lang) {
     document.getElementById("back-link").textContent = `← ${backText}`;
 
     // from guided tour
+    /*
     if (document.getElementById("form-name")) {
         document.getElementById("form-name").textContent = data.form.name;
     }
@@ -73,6 +74,7 @@ async function loadContent(section, lang) {
     if (document.getElementById("form-submit")) {
         document.getElementById("form-submit").textContent = data.form.submit; // Update submit button text
     }
+    */
     
     // Call setupLanguageToggle to re-establish event listeners
     // setupLanguageToggle();
