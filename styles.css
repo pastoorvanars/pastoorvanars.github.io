@@ -81,8 +81,8 @@ a:hover {
     color: white; /* Text color */
     opacity: 1; /* Always visible */
     transition: opacity 0.3s ease; /* Smooth transition for overlay */
-    font-size: 1.25em; /* Increase font size - adjust as needed */
-    text-decoration: underline; /* Add underline to text */
+    font-size: 1.5em; /* Increase font size - adjust as needed */
+    /* text-decoration: underline; /* Add underline to text */
 }
 
 .grid-item:hover img {
@@ -90,7 +90,14 @@ a:hover {
 }
 
 .grid-item:hover .overlay {
-    opacity: 0; /* Hide overlay on hover */
+    /* opacity: 0;  Hide overlay on hover */
+    background-color: rgba(0, 0, 0, 0); /* transparent background on hoover*/
+    text-shadow: 
+    0 0 5px rgba(0, 0, 0, 0.8),
+0 0 10px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(0, 0, 0, 0.4),
+    0 0 30px rgba(0, 0, 0, 0.2);
+font-size: 1.75em;
 }
 
 .hidden-on-small {
