@@ -10,6 +10,45 @@
     <link rel="stylesheet" href="styles.css" />
     <title id="content-title">Content Page</title>
     <script src="script.js" defer></script>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const cookieWall = document.getElementById("cookie-wall");
+    const acceptButton = document.getElementById("accept-cookies");
+    const denyButton = document.getElementById("deny-cookies");
+    const iframeContainer = document.getElementById("iframe-container");
+
+    // Check the user's consent on page load
+    const cookieConsent = localStorage.getItem("cookieConsent");
+
+    if (cookieConsent === null || cookieConsent === "false") {
+        cookieWall.style.display = "block"; // Show cookie wall if no consent is given
+    } else if (cookieConsent === "true") {
+        loadIframe(); // Load the iframe if consent is granted
+    }
+
+    acceptButton.addEventListener("click", function () {
+        localStorage.setItem("cookieConsent", "true");
+        cookieWall.style.display = "none"; // Hide cookie wall
+        loadIframe(); // Load the iframe after consent is granted
+    });
+
+    denyButton.addEventListener("click", function () {
+        localStorage.setItem("cookieConsent", "false");
+        cookieWall.style.display = "none"; // Keep cookie wall visible
+    });
+
+    function loadIframe() {
+        const iframe = document.createElement("iframe");
+        iframe.title = "Ars Events";
+        iframe.src = "https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FAmsterdam&showPrint=0&title=Ars%20Evenementen&mode=AGENDA&hl=nl&src=YmM1MTM1ZDU1MTI5YjM5YmUyY2ZlMWY5MzY5MWVlYTBmNzk5NzExZjVlNWVhZTQwMjE4YjJmMDdmNDk1ODIwYkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23006400";
+        iframe.style.border = "solid 1px #777";
+        iframe.width = "100%";
+        iframe.height = "600";
+        iframeContainer.appendChild(iframe); // Append the iframe to the container
+    }
+});
+
+    </script>
 </head>
 
 <body class="content-page">
@@ -27,9 +66,13 @@
         </div>
         <div class="column left-column">
             <div class="content">
+                <!--
                 <iframe title="Ars Events"
                     src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FAmsterdam&showPrint=0&title=Ars%20Evenementen&mode=AGENDA&hl=nl&src=YmM1MTM1ZDU1MTI5YjM5YmUyY2ZlMWY5MzY5MWVlYTBmNzk5NzExZjVlNWVhZTQwMjE4YjJmMDdmNDk1ODIwYkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23006400"
-                    style="border: solid 1px #777" width="100%" height="600"></iframe>
+                    style="border: solid 1px #777" width="100%" height="600"></iframe>-->
+
+<div id="iframe-container"></div> <!-- Placeholder for the iframe -->
+
             </div>
             <div class="content">
                 <!--
@@ -41,6 +84,7 @@
                 </div>
             -->
                 <!-- Begin Mailchimp Signup Form -->
+                <!-- mailchimp uitgezet
                 <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
                 <style type="text/css">
                     #mc_embed_signup {
@@ -88,7 +132,10 @@
                                 <div class="response" id="mce-error-response" style="display:none"></div>
                                 <div class="response" id="mce-success-response" style="display:none"></div>
                             </div>
+mailchimp uitgezet -->
                             <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                
+                <!-- mail chip uitzet
                             <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
                                     name="b_b14b2da07f05d1977a9d05517_02c299106e" tabindex="-1" value=""></div>
                             <div class="optionalParent">
@@ -104,6 +151,7 @@
                         </div>
                     </form>
                 </div>
+Mailchimp uitgezet -->
                 <script type='text/javascript'
                     src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
                 <script
@@ -122,7 +170,14 @@
     -->
 
 
-
+        <div id="cookie-wall" class="cookie-wall">
+            <p>
+                This page uses cookies to enhance your experience. By clicking "Accept," you consent to the use of
+                cookies.<br/><br/>
+            </p>
+            <button id="accept-cookies">Accept</button>
+            <button id="deny-cookies">Decline</button>
+        </div>
 </body>
 
 </html>

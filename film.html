@@ -3,9 +3,9 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-        <meta http-equiv="Pragma" content="no-cache">
-        <meta http-equiv="Expires" content="0">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
         <link rel="stylesheet" href="styles.css" />
         <title id="content-title">Content Page</title>
         <script src="script.js" defer></script>
@@ -24,7 +24,36 @@
             }
 
             // Check if Wistia script can be loaded
-            loadWistiaScript();
+
+            document.addEventListener("DOMContentLoaded", function () {
+                const cookieWall = document.getElementById("cookie-wall");
+                const acceptButton = document.getElementById("accept-cookies");
+                const denyButton = document.getElementById("deny-cookies");
+
+                // Check the user's consent on page load
+                const cookieConsent = localStorage.getItem("cookieConsent");
+
+                if (cookieConsent === null) {
+                    cookieWall.style.display = "block"; // Show cookie wall if no consent is given
+                } else if (cookieConsent === "false") {
+                    cookieWall.style.display = "block"; // Show cookie wall if consent is denied
+                } else {
+                    loadWistiaScript();
+                }
+
+                acceptButton.addEventListener("click", function () {
+                    localStorage.setItem("cookieConsent", "true");
+                    cookieWall.style.display = "none"; // Hide cookie wall
+                    loadWistiaScript();
+                    // Here you can add any logic for loading cookies if consent is granted
+                });
+
+                denyButton.addEventListener("click", function () {
+                    localStorage.setItem("cookieConsent", "false");
+                    cookieWall.style.display = "none"; // Keep cookie wall visible for reconsideration
+                    // You can add logic here for handling cookie denial
+                });
+            });
         </script>
 
         <!--<script src="https://fast.wistia.com/player.js" async></script> -->
@@ -52,16 +81,23 @@
                 <wistia-player id="video" media-id="rifkn82hwr" seo="false" aspect="1.7777777777777777"></wistia-player>
             </div>
             <div id="error-message" class="review" style="display: none">
-                <p id="content-text2">
-                    The video could not be played. You can view it directly on the platform:
-                </p>
+                <p id="content-text2">The video could not be played. You can view it directly on the platform:</p>
                 <p>
-                    <a id="platform-link" href="https://pastoorvanars.wistia.com/medias/rifkn82hwr" target="_blank">link</a
+                    <a id="platform-link" href="https://pastoorvanars.wistia.com/medias/rifkn82hwr" target="_blank"
+                        >link</a
                     >
                 </p>
             </div>
             <p id="content-text3">This is the content 2 for the selected item.</p>
             <div class="small-letters"><p id="content-text4">cookie message</p></div>
+        </div>
+        <div id="cookie-wall" class="cookie-wall">
+            <p>
+                This page uses cookies to enhance your experience. By clicking "Accept," you consent to the use of
+                cookies.<br/><br/>
+            </p>
+            <button id="accept-cookies">Accept</button>
+            <button id="deny-cookies">Decline</button>
         </div>
     </body>
 </html>
