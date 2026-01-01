@@ -119,3 +119,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     setupLanguageToggle(); // Set up the language toggle functionality
 });
+
+
+

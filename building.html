@@ -3,12 +3,40 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-        <meta http-equiv="Pragma" content="no-cache">
-        <meta http-equiv="Expires" content="0">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
         <link rel="stylesheet" href="styles.css" />
         <title id="content-title">Content Page</title>
         <script src="script.js" defer></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                // Add event listeners for clickable images
+                document.querySelectorAll(".clickable-image").forEach((image) => {
+                    image.addEventListener("click", (event) => {
+                        const modal = document.getElementById("imageModal");
+                        const modalImage = document.getElementById("modalImage");
+
+                        modalImage.src = event.target.src; // Set the modal image source
+                        modal.style.display = "flex"; // Display the modal
+                    });
+                });
+
+                // Close the modal when the close button is clicked
+                document.querySelector(".close-button").addEventListener("click", () => {
+                    const modal = document.getElementById("imageModal");
+                    modal.style.display = "none"; // Hide the modal
+                });
+
+                // Close the modal when clicking anywhere outside the image
+                document.getElementById("imageModal").addEventListener("click", (event) => {
+                    if (event.target === event.currentTarget) {
+                        const modal = document.getElementById("imageModal");
+                        modal.style.display = "none"; // Hide the modal
+                    }
+                });
+            });
+        </script>
     </head>
     <body class="content-page">
         <div class="language-toggle">
@@ -17,75 +45,64 @@
         </div>
         <a href="index.html" class="back-arrow" id="back-link">&#8592; Back</a>
         <div class="content">
-        <h1 id="content-header">Content Title</h1>
+            <h1 id="content-header">Content Title</h1>
         </div>
         <main class="multi-col">
-        <section class="column-section">
-            <div class="column right-column">
-                <div class="content">
-                    
-                    <img id="vert-image2" src="images/aldo.jpg" alt="Vertical image pastor" class="wrap-image-left" />   
-                    <p id="content-text">This is the content for the selected item.</p>
-                 
+            <section class="column-section">
+                <div class="column right-column">
+                    <div class="content">
+                        <img
+                            id="vert-image2"
+                            src="images/aldo.jpg"
+                            alt="Vertical image pastor"
+                            class="wrap-image-left clickable-image" />
+                        <p id="content-text">This is the content for the selected item.</p>
+                    </div>
                 </div>
-            </div>
-<!--            <div class="column left-column">
-                
-            </div> -->
-        </section>
-        <section class="column-section">
-            <div class="column right-column">
-                <div class="content">
-                    <img src="images/building_1.png" alt="Vertical image pastor" class="wrap-image-right" />
-                    <p id="content-text2">This is the content for the selected item.</p>
-                    
+            </section>
+            <section class="column-section">
+                <div class="column right-column">
+                    <div class="content">
+                        <img
+                            src="images/building_1.png"
+                            alt="Vertical image pastor"
+                            class="wrap-image-right clickable-image" />
+                        <p id="content-text2">This is the content for the selected item.</p>
+                    </div>
                 </div>
-            </div>
-            <!--<div class="column left-column">
-                
-            </div>-->
-        </section>
-        <section class="column-section">
-            <div class="column right-column">
-                <div class="content">
-                    <img src="images/building_3.jpg" alt="Vertical image pastor" class="wrap-image-left" />
-                    <p id="content-text3">This is the content for the selected item.</p>
-                    
+            </section>
+            <section class="column-section">
+                <div class="column right-column">
+                    <div class="content">
+                        <img src="images/building_3.jpg" alt="Vertical image pastor" class="wrap-image-left clickable-image" />
+                        <p id="content-text3">This is the content for the selected item.</p>
+                    </div>
                 </div>
-            </div>
-<!--            <div class="column left-column">
-
-            </div> -->
-        </section>
-        <section class="column-section">
-            <div class="column right-column">
-                <div class="content">
-                    <img src="images/building_4.jpg" alt="Vertical image pastor" class="wrap-image-right" />
-                    <p id="content-text4">This is the content for the selected item.</p>
-                    
+            </section>
+            <section class="column-section">
+                <div class="column right-column">
+                    <div class="content">
+                        <img src="images/building_4.jpg" alt="Vertical image pastor" class="wrap-image-right clickable-image" />
+                        <p id="content-text4">This is the content for the selected item.</p>
+                    </div>
                 </div>
-            </div>
-            <!--
-            <div class="column left-column">
-                <img src="images/building_4.jpg" alt="Vertical image pastor" class="responsive-image" />
-            </div>
--->
-        </section>
-        <section class="column-section">
-            <div class="column right-column">
-                <div class="content">
-                    <img src="images/building_5.jpg" alt="Vertical image pastor" class="wrap-image-left" />
-                    <p id="content-text5">This is the content for the selected item.</p>
+            </section>
+            <section class="column-section">
+                <div class="column right-column">
+                    <div class="content">
+                        <img src="images/building_5.jpg" alt="Vertical image pastor" class="wrap-image-left clickable-image" />
+                        <p id="content-text5">This is the content for the selected item.</p>
+                    </div>
                 </div>
-            </div>
-<!--            <div class="column left-column">
-                <img src="images/building_5.jpg" alt="Vertical image pastor" class="responsive-image" />
-            </div>
--->
-        </section>
+            </section>
         </main>
         <div class="content">
             <p id="content-text6">This is the content for the selected item.</p>
+        </div>
+        <!-- Image Modal -->
+        <div class="image-modal" id="imageModal">
+            <span class="close-button">&times;</span><br/>
+            <img class="modal-image" id="modalImage" src="" alt="" />
         </div>
     </body>
 </html>

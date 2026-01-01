@@ -457,3 +457,20 @@ body.content-page {
     cursor: pointer;
 }
 
+.image-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-image {
+    max-width: 90%; /* Ensure large images fit in the modal */
+    max-height: 90%; /* Limit height */
+}
