@@ -8,7 +8,8 @@ const sectionMap = {
     "plan-a-visit": "sectionVisit",
     gallery: "sectionGallery",
     "rent-space": "sectionRentSpace",
-    info: "sectionInformation"
+    info: "sectionInformation",
+    privacy: "sectionPrivacy"
 };
 
 // Function to fetch the JSON data and update the captions

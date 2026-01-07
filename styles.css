@@ -189,9 +189,10 @@ font-size: 1.75em;
 
 @media (max-width: 480px) {
     .grid-container {
-        grid-template-columns: 1fr; /* 1 column on very small screens */
+         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Change to smaller columns */
         height: auto; /* Allow height to adjust based on content */
     }
+
         .hidden-on-small {
         display: none; /* Show on larger screens */
     }
