@@ -125,11 +125,15 @@ font-size: 1.75em;
 
 
 
-/* Default stacked */
+/* Styles for the multi-column layout */
 .multi-col {
-  column-count: 1;
-  column-gap: 24px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr)); /* 300px minimum width per column */
+    gap: 20px; /* Space between columns */
+    padding: 20px; /* Padding around the grid */
 }
+
+
 
 
 /* Clear float at the end of content block to avoid overlap */
@@ -141,13 +145,14 @@ font-size: 1.75em;
 
 
 /* On large screens, create 2–3 columns */
+/*
 @media (min-width: 1200px) {
   .multi-col {
-    column-count: 2;   /* or 3 if you like */
+    column-count: 2;  
     column-gap: 28px;
   }
 }
-
+*/
 
 @media (max-width: 768px) {
     .grid-container {
@@ -457,20 +462,33 @@ body.content-page {
     cursor: pointer;
 }
 
+/* Styles for the image modal */
 .image-modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 9999; /* Sit on top */
-    left: 0;
-    top: 0;
+    display: none; /* Initially hidden */
+    position: fixed; /* Fixed positioning */
+    top: 0; /* Align to the top */
+    left: 0; /* Align to the left */
     width: 100%; /* Full width */
     height: 100%; /* Full height */
-    background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
-    justify-content: center;
-    align-items: center;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    z-index: 1000; /* Ensure it is on top */
+}
+
+/* Styles for the close button */
+.close-button {
+    position: absolute; /* Absolute positioning */
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    font-size: 30px; /* Font size for the close button */
+    color: white; /* Button color */
+    cursor: pointer; /* Pointer cursor on hover */
+    z-index: 1001; /* Ensure it's above other content */
 }
 
 .modal-image {
-    max-width: 90%; /* Ensure large images fit in the modal */
-    max-height: 90%; /* Limit height */
+    max-width: 90%; /* Responsive image size */
+    max-height: 90%; /* Responsive image size */
 }
+
