@@ -53,32 +53,10 @@ async function loadContent(section, lang) {
 
     // back button
     const backText = data.back;
-    document.getElementById("back-link").textContent = `← ${backText}`;
-
-    // from guided tour
-    /*
-    if (document.getElementById("form-name")) {
-        document.getElementById("form-name").textContent = data.form.name;
-    }
-    if (document.getElementById("form-email")) {
-        document.getElementById("form-email").textContent = data.form.email;
-    }
-    if (document.getElementById("form-phone")) {
-        document.getElementById("form-phone").textContent = data.form.phone;
-    }
-    if (document.getElementById("form-date")) {
-        document.getElementById("form-date").textContent = data.form.date;
-    }
-    if (document.getElementById("form-time")) {
-        document.getElementById("form-time").textContent = data.form.time;
-    }
-    if (document.getElementById("form-submit")) {
-        document.getElementById("form-submit").textContent = data.form.submit; // Update submit button text
-    }
-    */
-    
-    // Call setupLanguageToggle to re-establish event listeners
-    // setupLanguageToggle();
+    const backButton = document.getElementById("back-link");
+    if (backButton) {
+        document.getElementById("back-link").textContent = `← ${backText}`;
+    } 
 }
 
 // Function to handle language toggle
