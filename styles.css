@@ -228,14 +228,14 @@ body.content-page {
 .column-section {
     display: flex;
     flex-wrap: nowrap; /* Prevent wrapping */
-    margin: 10px; /* Optional: Add some margin around the section */
+    margin: 0px; /* Optional: Add some margin around the section */
     break-inside: avoid;   /* avoid fragmentation */
 }
 
 .column {
     flex: 1; /* Each column takes equal space */
     min-width: 300px; /* Set a minimum width to prevent too narrow columns */
-    padding: 10px; /* Optional: Add some padding inside the columns */
+    padding: 0px; /* Optional: Add some padding inside the columns */
     box-sizing: border-box; /* Ensures padding is included in width */
 }
 
