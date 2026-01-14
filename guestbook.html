@@ -124,12 +124,12 @@
 
         function openImageModal(imageSrc) {
             const modal = document.createElement("div");
-            modal.className = "image-modal";
+            modal.className = "image-modal-guestbook ";
             //modal.title = "Klik om te sluiten";
 
             const fullImage = document.createElement("img");
             fullImage.src = imageSrc;
-            fullImage.className = "modal-image";
+            fullImage.className = "modal-image-guestbook ";
 
             modal.appendChild(fullImage);
             document.body.appendChild(modal);

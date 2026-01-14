@@ -359,7 +359,7 @@ body.content-page {
 }
 
 /* styles for the image popup in the guestbook entry */
-.image-modal {
+.image-modal-guestbook {
     position: fixed;
     top: 0;
     left: 0;
@@ -372,7 +372,7 @@ body.content-page {
     z-index: 9999;
 }
 
-.modal-image {
+.modal-image-guestbook {
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
