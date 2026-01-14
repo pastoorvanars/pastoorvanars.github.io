@@ -193,6 +193,10 @@ font-size: 1.75em;
          grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Change to smaller columns */
         height: auto; /* Allow height to adjust based on content */
     }
+    .multi-col {
+        grid-template-columns: repeat(1, 1fr); /* Ensuring single column on very small screens */
+        padding: 10px; /* Reduce padding for a better fit */
+    }
 
         .hidden-on-small {
         display: none; /* Show on larger screens */
