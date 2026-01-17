@@ -512,3 +512,56 @@ body.content-page {
     max-height: 90%; /* Responsive image size */
 }
 
+
+/* Make the review card a positioning context */
+.review,
+.highlighted-review {
+  position: relative;
+}
+
+/* Permalink (chain) icon in the bottom-right corner */
+.permalink {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  opacity: 0.4;              /* subtle by default */
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+  outline: none;
+  /* Use an inline SVG as a background image (no extra file needed) */
+  background-image: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>\
+    <path d='M10 13a5 5 0 0 0 7.07 0l2.83-2.83a5 5 0 1 0-7.07-7.07L10.5 4'/>\
+    <path d='M14 11a5 5 0 0 0-7.07 0L4.1 13.83a5 5 0 1 0 7.07 7.07L13.5 20'/>\
+  </svg>");
+  background-size: 18px 18px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  border-radius: 3px;         /* nicer focus outline shape */
+    background-color: transparent !important; /* ensures no inherited light-grey background */
+}
+
+/* Reveal more strongly on hover/focus/parent hover */
+.review:hover .permalink,
+.highlighted-review:hover .permalink,
+.permalink:focus {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+/* Keyboard focus ring */
+.permalink:focus-visible {
+  box-shadow: 0 0 0 2px rgba(0, 128, 0, 0.45);
+}
+
+/* Utility to visually hide accessible text but keep it for screen readers */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,1px,1px);
+  white-space: nowrap; border: 0;
+}
