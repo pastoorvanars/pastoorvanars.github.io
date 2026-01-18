@@ -519,13 +519,33 @@ body.content-page {
   position: relative;
 }
 
+
+/* Tunables for the permalink and spacing */
+:root {
+  --permalink-size: 18px;    /* matches your icon size */
+  --permalink-offset: 10px;  /* right/bottom offset you set */
+  --permalink-gap: 6px;      /* >= 5px minimum requested */
+}
+
+
+.review,
+.highlighted-review {
+  position: relative;
+  padding-right: calc(var(--permalink-size) + var(--permalink-offset) + var(--permalink-gap));
+  padding-bottom: calc(var(--permalink-size) + var(--permalink-offset) + var(--permalink-gap));
+}
+
+
 /* Permalink (chain) icon in the bottom-right corner */
 .permalink {
+ 
+    
   position: absolute;
-  right: 10px;
-  bottom: 10px;
-  width: 18px;
-  height: 18px;
+  right: var(--permalink-offset);
+  bottom: var(--permalink-offset);
+  width: var(--permalink-size);
+  height: var(--permalink-size);
+  
   display: inline-block;
   opacity: 0.4;              /* subtle by default */
   transition: opacity 0.2s ease, transform 0.2s ease;
