@@ -10,14 +10,15 @@ body {
     font-family: 'Open Sans', Arial, sans-serif;
 }
 
-
-#content-text ul {
+#content-text ul,
+#content-text2 ul {
   list-style: disc inside;
   margin: 1em 0;
   padding-left: 1.2em;
 }
 
-#content-text p {
+#content-text p,
+#content-text2 p {
   margin: 1em 0;
   line-height: 1.5;
 }
