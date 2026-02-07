@@ -592,3 +592,72 @@ body.content-page {
 }
 
 
+/* === Guides grid === */
+.guides {
+  --card-bg: rgba(255,255,255,0.08);          /* reads well on your dark gradient bg */
+  --card-border: rgba(255,255,255,0.15);
+  --card-shadow: 0 6px 16px rgba(0,0,0,0.25);
+  --gap: 16px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--gap);
+  margin-top: 10px;
+}
+
+/* Individual card */
+.guide-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 14px 12px;
+  text-align: center;
+  color: #fff;                                 /* your page uses white text */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .guide-card { transition: none; }
+}
+
+.guide-card:hover,
+.guide-card:focus-within {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow);
+}
+
+/* Avatar */
+.guide-photo {
+  width: 100%;
+  aspect-ratio: 1 / 1;                         /* perfect square */
+  object-fit: cover;                            /* crop centrally without distortion */
+  border-radius: 50%;                           /* circle avatar */
+  display: block;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35);
+  border: 2px solid rgba(255,255,255,0.25);
+}
+
+/* Name */
+.guide-name {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.2px;
+  color: #ffffff;
+}
+
+/* Optional: compact variant when nested in your existing multi-col sections */
+.column .guides {
+  margin-top: 6px;
+}
+
+/* Optional: if you ever show long names, clamp lines to avoid stretching card height */
+.guide-name {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
