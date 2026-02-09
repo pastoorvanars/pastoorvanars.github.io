@@ -201,6 +201,17 @@ font-size: 1.75em;
         width: min(100%, 280px);
         shape-outside: none;
        }
+           .grid-item:hover .overlay {
+        /* opacity: 0;  Hide overlay on hover */
+        background-color: rgba(0, 0, 0, 0);
+        /* transparent background on hoover*/
+        text-shadow:
+            0 0 5px rgba(0, 0, 0, 0.8),
+            0 0 10px rgba(0, 0, 0, 0.6),
+            0 0 20px rgba(0, 0, 0, 0.4),
+            0 0 30px rgba(0, 0, 0, 0.2);
+        font-size: 1.5em;
+    }
 }
 
 @media (max-width: 480px) {
@@ -557,11 +568,7 @@ body.content-page {
   text-decoration: none;
   outline: none;
   /* Use an inline SVG as a background image (no extra file needed) */
-  background-image: url("data:image/svg+xml;utf8,\
-  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>\
-    <path d='M10 13a5 5 0 0 0 7.07 0l2.83-2.83a5 5 0 1 0-7.07-7.07L10.5 4'/>\
-    <path d='M14 11a5 5 0 0 0-7.07 0L4.1 13.83a5 5 0 1 0 7.07 7.07L13.5 20'/>\
-  </svg>");
+  background-image: url("data:image/svg+xml;utf8,  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23111' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>    <path d='M10 13a5 5 0 0 0 7.07 0l2.83-2.83a5 5 0 1 0-7.07-7.07L10.5 4'/>    <path d='M14 11a5 5 0 0 0-7.07 0L4.1 13.83a5 5 0 1 0 7.07 7.07L13.5 20'/>  </svg>");
   background-size: 18px 18px;
   background-repeat: no-repeat;
   background-position: center center;
