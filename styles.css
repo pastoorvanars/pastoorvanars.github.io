@@ -221,7 +221,7 @@ font-size: 1.75em;
     }
     .multi-col {
         grid-template-columns: repeat(1, 1fr); /* Ensuring single column on very small screens */
-        padding: 10px; /* Reduce padding for a better fit */
+        padding: 20px; /* Reduce padding for a better fit */
     }
 
         .hidden-on-small {
