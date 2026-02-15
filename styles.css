@@ -18,7 +18,8 @@ body {
 }
 
 #content-text p,
-#content-text2 p {
+#content-text2 p,
+#content-text3 p {
   margin: 1em 0;
   line-height: 1.5;
 }
