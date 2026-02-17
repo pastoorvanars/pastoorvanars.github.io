@@ -11,42 +11,42 @@
     <title id="content-title">Content Page</title>
     <script src="script.js" defer></script>
     <script>
-document.addEventListener("DOMContentLoaded", function () {
-    const cookieWall = document.getElementById("cookie-wall");
-    const acceptButton = document.getElementById("accept-cookies");
-    const denyButton = document.getElementById("deny-cookies");
-    const iframeContainer = document.getElementById("iframe-container");
+        document.addEventListener("DOMContentLoaded", function () {
+            const cookieWall = document.getElementById("cookie-wall");
+            const acceptButton = document.getElementById("accept-cookies");
+            const denyButton = document.getElementById("deny-cookies");
+            const iframeContainer = document.getElementById("iframe-container");
 
-    // Check the user's consent on page load
-    const cookieConsent = localStorage.getItem("cookieConsent");
+            // Check the user's consent on page load
+            const cookieConsent = localStorage.getItem("cookieConsent");
 
-    if (cookieConsent === null || cookieConsent === "false") {
-        cookieWall.style.display = "block"; // Show cookie wall if no consent is given
-    } else if (cookieConsent === "true") {
-        loadIframe(); // Load the iframe if consent is granted
-    }
+            if (cookieConsent === null || cookieConsent === "false") {
+                cookieWall.style.display = "block"; // Show cookie wall if no consent is given
+            } else if (cookieConsent === "true") {
+                loadIframe(); // Load the iframe if consent is granted
+            }
 
-    acceptButton.addEventListener("click", function () {
-        localStorage.setItem("cookieConsent", "true");
-        cookieWall.style.display = "none"; // Hide cookie wall
-        loadIframe(); // Load the iframe after consent is granted
-    });
+            acceptButton.addEventListener("click", function () {
+                localStorage.setItem("cookieConsent", "true");
+                cookieWall.style.display = "none"; // Hide cookie wall
+                loadIframe(); // Load the iframe after consent is granted
+            });
 
-    denyButton.addEventListener("click", function () {
-        localStorage.setItem("cookieConsent", "false");
-        cookieWall.style.display = "none"; // Keep cookie wall visible
-    });
+            denyButton.addEventListener("click", function () {
+                localStorage.setItem("cookieConsent", "false");
+                cookieWall.style.display = "none"; // Keep cookie wall visible
+            });
 
-    function loadIframe() {
-        const iframe = document.createElement("iframe");
-        iframe.title = "Ars vieringen en evenementen";
-        iframe.src = "https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FAmsterdam&showPrint=0&title=Ars%20vieringen%20en%20evenementen&mode=AGENDA&hl=nl&src=YmM1MTM1ZDU1MTI5YjM5YmUyY2ZlMWY5MzY5MWVlYTBmNzk5NzExZjVlNWVhZTQwMjE4YjJmMDdmNDk1ODIwYkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23006400";
-        iframe.style.border = "solid 1px #777";
-        iframe.width = "100%";
-        iframe.height = "600";
-        iframeContainer.appendChild(iframe); // Append the iframe to the container
-    }
-});
+            function loadIframe() {
+                const iframe = document.createElement("iframe");
+                iframe.title = "Ars vieringen en evenementen";
+                iframe.src = "https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FAmsterdam&showPrint=0&title=Ars%20vieringen%20en%20evenementen&mode=AGENDA&hl=nl&src=YmM1MTM1ZDU1MTI5YjM5YmUyY2ZlMWY5MzY5MWVlYTBmNzk5NzExZjVlNWVhZTQwMjE4YjJmMDdmNDk1ODIwYkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23006400";
+                iframe.style.border = "solid 1px #777";
+                iframe.width = "100%";
+                iframe.height = "600";
+                iframeContainer.appendChild(iframe); // Append the iframe to the container
+            }
+        });
 
     </script>
 </head>
@@ -57,11 +57,20 @@ document.addEventListener("DOMContentLoaded", function () {
         <img src="images/en-flag.svg" alt="English" id="lang-en" class="lang-toggle" data-lang="en" />
     </div>
     <a href="index.html" class="back-arrow" id="back-link">&#8592; Back</a>
+
     <section class="column-section">
         <div class="column right-column">
             <div class="content">
-                <h1 id="content-header">Content Title</h1>
-                <p id="content-text">This is the content for the selected item.</p>
+                <div>
+                    <h1 id="content-header">Content Title</h1>
+
+                    <p id="content-text">This is the content for the selected item.</p>
+                </div>
+                <div>
+                    <img id="vert-image" src="images/tile_community.jpg" class="wrap-image-left" />
+                    <p id="content-text2">This is the content for the selected item.</p>
+                </div>
+
             </div>
         </div>
         <div class="column left-column">
@@ -71,112 +80,23 @@ document.addEventListener("DOMContentLoaded", function () {
                     src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FAmsterdam&showPrint=0&title=Ars%20Evenementen&mode=AGENDA&hl=nl&src=YmM1MTM1ZDU1MTI5YjM5YmUyY2ZlMWY5MzY5MWVlYTBmNzk5NzExZjVlNWVhZTQwMjE4YjJmMDdmNDk1ODIwYkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23006400"
                     style="border: solid 1px #777" width="100%" height="600"></iframe>-->
 
-<div id="iframe-container"></div> <!-- Placeholder for the iframe -->
+                <div id="iframe-container"></div> <!-- Placeholder for the iframe -->
 
             </div>
             <div class="content">
-                <!--
-                <div class="form" style="background-color: #f9f9f9">
-                    <iframe
-                        data-tally-src="https://tally.so/embed/nGND5Z?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-                        loading="lazy" width="100%" height="404" frameborder="0" marginheight="0" marginwidth="0"
-                        title="Ars Nieuwsbrief"></iframe>
-                </div>
-            -->
-                <!-- Begin Mailchimp Signup Form -->
-                <!-- mailchimp uitgezet
-                <link href="//cdn-images.mailchimp.com/embedcode/classic-071822.css" rel="stylesheet" type="text/css">
-                <style type="text/css">
-                    #mc_embed_signup {
-                        background: #4a4a4a;
-                        color: white;
-                        clear: left;
-                        font: 14px 'Open Sans', Helvetica, Arial, sans-serif;
-                    }
-
-                    /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-                </style>
-                <div id="mc_embed_signup">
-                    <form
-                        action="https://rkparochiedevierevangelisten.us19.list-manage.com/subscribe/post?u=b14b2da07f05d1977a9d05517&amp;id=02c299106e&amp;f_id=00eb93e4f0"
-                        method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate"
-                        target="_blank" novalidate>
-                        <div id="mc_embed_signup_scroll">
-                            <h2>Aanmelden Ars agenda digitaal</h2>
-                            <div class="indicates-required"><span class="asterisk">*</span> verplicht veld</div>
-                            <div class="mc-field-group"> <label for="mce-EMAIL">E-mailadres <span
-                                        class="asterisk">*</span></label>
-                                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL"
-                                    required> <span id="mce-EMAIL-HELPERTEXT" class="helper_text"></span>
-                            </div>
-                            <div class="mc-field-group"> <label for="mce-FNAME">Voornaam <span
-                                        class="asterisk">*</span></label>
-                                <input type="text" value="" name="FNAME" class="required" id="mce-FNAME" required> <span
-                                    id="mce-FNAME-HELPERTEXT" class="helper_text"></span>
-                            </div>
-                            <div class="mc-field-group"> <label for="mce-LNAME">Achternaam <span
-                                        class="asterisk">*</span></label>
-                                <input type="text" value="" name="LNAME" class="required" id="mce-LNAME" required> <span
-                                    id="mce-LNAME-HELPERTEXT" class="helper_text"></span>
-                            </div>
-                            <div class="mc-field-group input-group"> <strong>Distributielijst </strong>
-                                <ul>
-                                    <li><input type="checkbox" value="2" name="group[178883][2]"
-                                            id="mce-group[178883]-178883-0" checked><label
-                                            for="mce-group[178883]-178883-0">Ars Agenda</label></li>
-                                </ul> <span id="mce-group[178883]-HELPERTEXT" class="helper_text"></span>
-                            </div>
-                            <div hidden="true"><input type="hidden" name="tags" value="2167592"></div>
-                            <div id="mce-responses" class="clear foot">
-                                <div class="response" id="mce-error-response" style="display:none"></div>
-                                <div class="response" id="mce-success-response" style="display:none"></div>
-                            </div>
-mailchimp uitgezet -->
-                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                
-                <!-- mail chip uitzet
-                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
-                                    name="b_b14b2da07f05d1977a9d05517_02c299106e" tabindex="-1" value=""></div>
-                            <div class="optionalParent">
-                                <div class="clear foot">
-                                    <input type="submit" value="Inschrijven" name="subscribe" id="mc-embedded-subscribe"
-                                        class="button">
-                                    <p class="brandingLogo"><a href="http://eepurl.com/h7W88j"
-                                            title="Mailchimp - email marketing made easy and fun"><img
-                                                src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-Mailchimp uitgezet -->
-                <script type='text/javascript'
-                    src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
-                <script
-                    type='text/javascript'>(function ($) { window.fnames = new Array(); window.ftypes = new Array(); fnames[0] = 'EMAIL'; ftypes[0] = 'email'; fnames[1] = 'FNAME'; ftypes[1] = 'text'; fnames[2] = 'LNAME'; ftypes[2] = 'text'; fnames[3] = 'ADDRESS'; ftypes[3] = 'address'; fnames[4] = 'PHONE'; ftypes[4] = 'phone'; fnames[5] = 'BIRTHDAY'; ftypes[5] = 'birthday'; }(jQuery)); var $mcj = jQuery.noConflict(true);</script>
-                <!--End mc_embed_signup-->
-
             </div>
         </div>
     </section>
 
-    <!-- connection youtube video 
-    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Up87EWRfUmw?si=hQAYHl1-wujMCtUO" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
--->
-    <!--
-    <script>var d = document, w = "https://tally.so/widgets/embed.js", v = function () { "undefined" != typeof Tally ? Tally.loadEmbeds() : d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function (e) { e.src = e.dataset.tallySrc })) }; if ("undefined" != typeof Tally) v(); else if (d.querySelector('script[src="' + w + '"]') == null) { var s = d.createElement("script"); s.src = w, s.onload = v, s.onerror = v, d.body.appendChild(s); }</script>
-    -->
-
-
-        <div id="cookie-wall" class="cookie-wall">
-            <p>
-                Deze website gebruikt cookies voor een betere werking, zodat hier de agenda getoond kan worden. Door op Accepteren te klikken, gaat u akkoord met het gebruik van cookies.<br/><br/>Zie de <a href='privacy.html#cookies' target='_blank'>Privacy</a> pagina voor meer informatie. <br/><br/>
-            </p>
-            <button id="accept-cookies">Accepteer</button>
-            <button id="deny-cookies">Weiger</button>
-        </div>
+    <div id="cookie-wall" class="cookie-wall">
+        <p>
+            Deze website gebruikt cookies voor een betere werking, zodat hier de agenda getoond kan worden. Door op
+            Accepteren te klikken, gaat u akkoord met het gebruik van cookies.<br /><br />Zie de <a
+                href='privacy.html#cookies' target='_blank'>Privacy</a> pagina voor meer informatie. <br /><br />
+        </p>
+        <button id="accept-cookies">Accepteer</button>
+        <button id="deny-cookies">Weiger</button>
+    </div>
 </body>
 
 </html>
