@@ -125,7 +125,7 @@ font-size: 1.75em;
 /* Image that text wraps around */
 .wrap-image-left {
     float: left;                 /* or right; depending on your design */
-    width: clamp(180px, 28%, 320px);  /* responsive width constraints */
+    width: clamp(180px, 30%, 320px);  /* responsive width constraints */
     margin: 0 16px 8px 0;        /* gap between image and text */
     shape-outside: inset(0 round 8px);/* helps smoother wrap */
     border-radius: 8px;          /* nice rounded corners */
@@ -134,7 +134,7 @@ font-size: 1.75em;
 /* Image that text wraps around */
 .wrap-image-right {
     float: right;                 /* or right; depending on your design */
-    width: clamp(180px, 40%, 320px);  /* responsive width constraints */
+    width: clamp(180px, 30%, 320px);  /* responsive width constraints */
     margin: 0 0 8px 16px;        /* gap between image and text */
     shape-outside: inset(0 round 8px);/* helps smoother wrap */
     border-radius: 8px;          /* nice rounded corners */
