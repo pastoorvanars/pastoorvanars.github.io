@@ -1,114 +1,124 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-        <meta http-equiv="Pragma" content="no-cache" />
-        <meta http-equiv="Expires" content="0" />
-        <!-- Favicon -->
-        <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-        <link rel="shortcut icon" href="/favicon/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-        <meta name="apple-mobile-web-app-title" content="Arskerk" />
-        <link rel="manifest" href="/favicon/site.webmanifest" />
-        <!-- End favicon -->
-        <link rel="stylesheet" href="styles.css" />
-        <title id="content-title">Content Page</title>
-        <script src="script.js" defer></script>
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                // Add event listeners for clickable images
-                document.querySelectorAll(".clickable-image").forEach((image) => {
-                    image.addEventListener("click", (event) => {
-                        const modal = document.getElementById("imageModal");
-                        const modalImage = document.getElementById("modalImage");
 
-                        modalImage.src = event.target.src; // Set the modal image source
-                        modal.style.display = "flex"; // Display the modal
-                    });
-                });
-
-                // Close the modal when the close button is clicked
-                document.querySelector(".close-button").addEventListener("click", () => {
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Arskerk" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <!-- End favicon -->
+    <link rel="stylesheet" href="styles.css" />
+    <title id="content-title">Kerk en gebouw</title>
+    <script src="script.js" defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Add event listeners for clickable images
+            document.querySelectorAll(".clickable-image").forEach((image) => {
+                image.addEventListener("click", (event) => {
                     const modal = document.getElementById("imageModal");
-                    modal.style.display = "none"; // Hide the modal
-                });
+                    const modalImage = document.getElementById("modalImage");
 
-                // Close the modal when clicking anywhere outside the image
-                document.getElementById("imageModal").addEventListener("click", (event) => {
-                    if (event.target === event.currentTarget) {
-                        const modal = document.getElementById("imageModal");
-                        modal.style.display = "none"; // Hide the modal
-                    }
+                    modalImage.src = event.target.src; // Set the modal image source
+                    modal.style.display = "flex"; // Display the modal
                 });
             });
-        </script>
-    </head>
-    <body class="content-page">
-        <div class="language-toggle">
-            <img src="images/nl-flag.svg" alt="Dutch" id="lang-nl" class="lang-toggle" data-lang="nl" />
-            <img src="images/en-flag.svg" alt="English" id="lang-en" class="lang-toggle" data-lang="en" />
-        </div>
-        <a href="index.html" class="back-arrow" id="back-link">&#8592; Back</a>
+
+            // Close the modal when the close button is clicked
+            document.querySelector(".close-button").addEventListener("click", () => {
+                const modal = document.getElementById("imageModal");
+                modal.style.display = "none"; // Hide the modal
+            });
+
+            // Close the modal when clicking anywhere outside the image
+            document.getElementById("imageModal").addEventListener("click", (event) => {
+                if (event.target === event.currentTarget) {
+                    const modal = document.getElementById("imageModal");
+                    modal.style.display = "none"; // Hide the modal
+                }
+            });
+        });
+    </script>
+</head>
+
+<body class="content-page">
+    <div class="language-toggle">
+        <img src="images/nl-flag.svg" alt="Dutch" id="lang-nl" class="lang-toggle" data-lang="nl" />
+        <img src="images/en-flag.svg" alt="English" id="lang-en" class="lang-toggle" data-lang="en" />
+    </div>
+    <nav>
+        <a href="index.html" class="back-arrow" id="back-link">&#8592; Terug naar begin</a>
+    </nav>
+    <header>
         <div class="content">
             <h1 id="content-header">Kerk en gebouw</h1>
         </div>
-        <main class="multi-col">
-            <section class="column-section">
-                <div class="column right-column">
-                        <img
-                            id="vert-image2"
-                            src="images/aldo.jpg"
-                            alt="Portret foto van architect Aldo van Eyck."
-                            class="wrap-image-left clickable-image" />
-                        <p id="content-text">De Pastoor van Ars‑kerk, ontworpen door architect Aldo van Eyck, is een bijzonder gebouw uit 1969 met een sober uiterlijk en een verrassend lichte, sacrale binnenruimte. Lees meer over Aldo van Eyck via <a href='https://nl.wikipedia.org/wiki/Aldo_van_Eyck' target='_blank' rel='noopener noreferrer'>deze link</a>.</p>
-                </div>
-            </section>
-            <section class="column-section">
-                <div class="column right-column">
-                    
-                        <img
-                            src="images/building_1.png"
-                            alt="Architectuur tekeningen van de kerk met prominente lichtkoepels."
-                            class="wrap-image-right clickable-image" />
-                        <p id="content-text2">This is the content for the selected item.</p>
-                    
-                </div>
-            </section>
-            <section class="column-section">
-                <div class="column right-column">
-                    
-                        <img src="images/building_3.jpg" alt="Foto van de hoge via sacra met de hangende lampen." class="wrap-image-left clickable-image" />
-                        <p id="content-text3">This is the content for the selected item.</p>
-                    
-                </div>
-            </section>
-            <section class="column-section">
-                <div class="column right-column">
-                    
-                        <img src="images/building_4.jpg" alt="Tekening van het zijaanzicht van het gebouw waarbij het verschil in hoogte duidelijk wordt gemaakt." class="wrap-image-right clickable-image" />
-                        <p id="content-text4">This is the content for the selected item.</p>
-                    
-                </div>
-            </section>
-            <section class="column-section">
-                <div class="column right-column">
-                    
-                        <img src="images/building_5.jpg" alt="Oude zwart wit foto van de geloofsgemeenschap genomen vanaf achterin de kerk richting het altaar." class="wrap-image-left clickable-image" />
-                        <p id="content-text5">This is the content for the selected item.</p>
-                 
-                </div>
-            </section>
-        </main>
-        <div class="content">
-            <p id="content-text6">This is the content for the selected item.</p>
-        </div>
-        <!-- Image Modal -->
-        <div class="image-modal" id="imageModal">
-            <span class="close-button">&times;</span><br/>
-            <img class="modal-image" id="modalImage" src="" alt="" />
-        </div>
-    </body>
+    </header>
+    <main class="multi-col">
+        <section class="column-section">
+            <div class="column right-column">
+                <img id="vert-image2" src="images/aldo.jpg" alt="Portret foto van architect Aldo van Eyck."
+                    class="wrap-image-left clickable-image" />
+                <p id="content-text">De Pastoor van Ars‑kerk, ontworpen door architect Aldo van Eyck, is een bijzonder
+                    gebouw uit 1969 met een sober uiterlijk en een verrassend lichte, sacrale binnenruimte. Lees meer
+                    over Aldo van Eyck via <a href='https://nl.wikipedia.org/wiki/Aldo_van_Eyck' target='_blank'
+                        rel='noopener noreferrer'>deze link</a>.</p>
+            </div>
+        </section>
+        <section class="column-section">
+            <div class="column right-column">
+
+                <img src="images/building_1.png" alt="Architectuur tekeningen van de kerk met prominente lichtkoepels."
+                    class="wrap-image-right clickable-image" />
+                <p id="content-text2"></p>
+
+            </div>
+        </section>
+        <section class="column-section">
+            <div class="column right-column">
+
+                <img src="images/building_3.jpg" alt="Foto van de hoge via sacra met de hangende lampen."
+                    class="wrap-image-left clickable-image" />
+                <p id="content-text3"></p>
+
+            </div>
+        </section>
+        <section class="column-section">
+            <div class="column right-column">
+
+                <img src="images/building_4.jpg"
+                    alt="Tekening van het zijaanzicht van het gebouw waarbij het verschil in hoogte duidelijk wordt gemaakt."
+                    class="wrap-image-right clickable-image" />
+                <p id="content-text4"></p>
+
+            </div>
+        </section>
+        <section class="column-section">
+            <div class="column right-column">
+
+                <img src="images/building_5.jpg"
+                    alt="Oude zwart wit foto van de geloofsgemeenschap genomen vanaf achterin de kerk richting het altaar."
+                    class="wrap-image-left clickable-image" />
+                <p id="content-text5"></p>
+
+            </div>
+        </section>
+    </main>
+    <div class="content">
+        <p id="content-text6"></p>
+    </div>
+    <!-- Image Modal -->
+    <div class="image-modal" id="imageModal">
+        <span class="close-button">&times;</span><br />
+        <img class="modal-image" id="modalImage" src="" alt="" />
+    </div>
+</body>
+
 </html>

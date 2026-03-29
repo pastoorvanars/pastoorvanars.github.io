@@ -356,7 +356,8 @@ body.content-page {
     border-radius: 5px;
     flex: 1 1 calc(40% - 20px);
     box-sizing: border-box;
-    color: #222222;
+    color: #333333;
+	background-color: #FFFFFF;
 }
 
 .review, .highlighted-review {
@@ -364,7 +365,6 @@ body.content-page {
     flex-direction: row; /* Default: image on left, text on right */
     justify-content: space-between;
     align-items: flex-start;
-    background-color: #f0f0f0;
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 15px;
@@ -688,3 +688,14 @@ body.content-page {
   overflow: hidden;
 }
 
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}

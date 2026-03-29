@@ -1,59 +1,64 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-        <meta http-equiv="Pragma" content="no-cache" />
-        <meta http-equiv="Expires" content="0" />
-        <!-- Favicon -->
-        <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-        <link rel="shortcut icon" href="/favicon/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-        <meta name="apple-mobile-web-app-title" content="Arskerk" />
-        <link rel="manifest" href="/favicon/site.webmanifest" />
-        <!-- End favicon -->
 
-        <link rel="stylesheet" href="styles.css" />
-        <title id="content-title">Content Page</title>
-        <script src="script.js" defer></script>
-    </head>
-    <body class="content-page">
-        <div class="language-toggle">
-            <img src="images/nl-flag.svg" alt="Dutch" id="lang-nl" class="lang-toggle" data-lang="nl" />
-            <img src="images/en-flag.svg" alt="English" id="lang-en" class="lang-toggle" data-lang="en" />
-        </div>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Arskerk" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <!-- End favicon -->
+
+    <link rel="stylesheet" href="styles.css" />
+    <title id="content-title">Content Page</title>
+    <script src="script.js" defer></script>
+</head>
+
+<body class="content-page">
+    <div class="language-toggle">
+        <img src="images/nl-flag.svg" alt="Dutch" id="lang-nl" class="lang-toggle" data-lang="nl" />
+        <img src="images/en-flag.svg" alt="English" id="lang-en" class="lang-toggle" data-lang="en" />
+    </div>
+    <nav>
         <a href="index.html" class="back-arrow" id="back-link">&#8592; Back</a>
+    </nav>
+    <header>
         <div class="content">
             <h1 id="content-header">Pastoor van Ars</h1>
         </div>
-        <main class="multi-col">
-            <section class="column-section">
-                <div class="column right-column">
-                    <img
-                        id="vert-image2"
-                        src="images/vert-pastor.jpg"
-                        alt="Verticale foto van het beeld van de Pastoor van Ars wat in de kerk staat."
-                        class="wrap-image-right" />
+    </header>
+    <main class="multi-col">
+        <section class="column-section">
+            <div class="column right-column">
+                <img id="vert-image2" src="images/vert-pastor.jpg"
+                    alt="Verticale foto van het beeld van de Pastoor van Ars wat in de kerk staat."
+                    class="wrap-image-right" />
 
-                    <p id="content-text">Jean Marie Vianney, de Pastoor van Ars, was een toegewijde priester en geliefd biechtvader. Zijn eenvoudige kerk groeide uit tot een bedevaartsoord. Hij werd in 1924 heilig verklaard. Zijn basiliek bevindt zich in <a href='https://maps.app.goo.gl/w7LCMVWCzTrYaPtP8' target='_blank' rel='noopener noreferrer'>Ars-sur-Formans</a>.</p>
-                </div>
-            </section>
-            <section class="column-section">
-                <div class="column right-column">
-                    <p id="content-text2">This is the content for the selected item.</p>
-                </div>
-                <div class="column left-column">
-                    <iframe
-                        title="map"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d88702.8723018682!2d4.68869202156483!3d45.991932891486975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f49a2b873bf89d%3A0x408ab2ae4c21790!2s01480%20Ars-sur-Formans%2C%20France!5e0!3m2!1sen!2snl!4v1758447348685!5m2!1sen!2snl"
-                        style="border: 0; width: 100%; height: 300px"
-                        allowfullscreen=""
-                        loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </section>
-        </main>
-    </body>
+                <p id="content-text">Jean Marie Vianney, de Pastoor van Ars, was een toegewijde priester en geliefd
+                    biechtvader. Zijn eenvoudige kerk groeide uit tot een bedevaartsoord. Hij werd in 1924 heilig
+                    verklaard. Zijn basiliek bevindt zich in <a href='https://maps.app.goo.gl/w7LCMVWCzTrYaPtP8'
+                        target='_blank' rel='noopener noreferrer'>Ars-sur-Formans</a>.</p>
+            </div>
+        </section>
+        <section class="column-section">
+            <div class="column right-column">
+                <p id="content-text2"></p>
+            </div>
+            <div class="column left-column">
+                <iframe title="map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d88702.8723018682!2d4.68869202156483!3d45.991932891486975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f49a2b873bf89d%3A0x408ab2ae4c21790!2s01480%20Ars-sur-Formans%2C%20France!5e0!3m2!1sen!2snl!4v1758447348685!5m2!1sen!2snl"
+                    style="border: 0; width: 100%; height: 300px" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+</body>
+
 </html>

@@ -1,111 +1,125 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-        <meta http-equiv="Pragma" content="no-cache" />
-        <meta http-equiv="Expires" content="0" />
-        <!-- Favicon -->
-        <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
-        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
-        <link rel="shortcut icon" href="/favicon/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
-        <meta name="apple-mobile-web-app-title" content="Arskerk" />
-        <link rel="manifest" href="/favicon/site.webmanifest" />
-        <!-- End favicon -->
 
-        <link rel="stylesheet" href="styles.css" />
-        <title id="content-title">Content Page</title>
-        <script src="script.js" defer></script>
-        <script>
-            function loadWistiaScript() {
-                const script = document.createElement("script");
-                script.src = "https://fast.wistia.com/player.js";
-                script.async = true;
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Arskerk" />
+    <link rel="manifest" href="/favicon/site.webmanifest" />
+    <!-- End favicon -->
 
-                script.onerror = function () {
-                    document.getElementById("error-message").style.display = "block";
-                    document.getElementById("wistia-player-div").style.display = "none";
-                };
+    <link rel="stylesheet" href="styles.css" />
+    <title id="content-title">Korte film</title>
+    <script src="script.js" defer></script>
+    <script>
+        function loadWistiaScript() {
+            const script = document.createElement("script");
+            script.src = "https://fast.wistia.com/player.js";
+            script.async = true;
 
-                document.head.appendChild(script);
+            script.onerror = function () {
+                document.getElementById("error-message").style.display = "block";
+                document.getElementById("wistia-player-div").style.display = "none";
+            };
+
+            document.head.appendChild(script);
+        }
+
+        // Check if Wistia script can be loaded
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const cookieWall = document.getElementById("cookie-wall");
+            const acceptButton = document.getElementById("accept-cookies");
+            const denyButton = document.getElementById("deny-cookies");
+
+            // Check the user's consent on page load
+            const cookieConsent = localStorage.getItem("cookieConsent");
+
+            if (cookieConsent === null) {
+                cookieWall.style.display = "block"; // Show cookie wall if no consent is given
+            } else if (cookieConsent === "false") {
+                cookieWall.style.display = "block"; // Show cookie wall if consent is denied
+            } else {
+                loadWistiaScript();
             }
 
-            // Check if Wistia script can be loaded
-
-            document.addEventListener("DOMContentLoaded", function () {
-                const cookieWall = document.getElementById("cookie-wall");
-                const acceptButton = document.getElementById("accept-cookies");
-                const denyButton = document.getElementById("deny-cookies");
-
-                // Check the user's consent on page load
-                const cookieConsent = localStorage.getItem("cookieConsent");
-
-                if (cookieConsent === null) {
-                    cookieWall.style.display = "block"; // Show cookie wall if no consent is given
-                } else if (cookieConsent === "false") {
-                    cookieWall.style.display = "block"; // Show cookie wall if consent is denied
-                } else {
-                    loadWistiaScript();
-                }
-
-                acceptButton.addEventListener("click", function () {
-                    localStorage.setItem("cookieConsent", "true");
-                    cookieWall.style.display = "none"; // Hide cookie wall
-                    loadWistiaScript();
-                    // Here you can add any logic for loading cookies if consent is granted
-                });
-
-                denyButton.addEventListener("click", function () {
-                    localStorage.setItem("cookieConsent", "false");
-                    cookieWall.style.display = "none"; // Keep cookie wall visible for reconsideration
-                    // You can add logic here for handling cookie denial
-                });
+            acceptButton.addEventListener("click", function () {
+                localStorage.setItem("cookieConsent", "true");
+                cookieWall.style.display = "none"; // Hide cookie wall
+                loadWistiaScript();
+                // Here you can add any logic for loading cookies if consent is granted
             });
-        </script>
 
-        <!--<script src="https://fast.wistia.com/player.js" async></script> -->
-        <script src="https://fast.wistia.com/embed/rifkn82hwr.js" async type="module"></script>
+            denyButton.addEventListener("click", function () {
+                localStorage.setItem("cookieConsent", "false");
+                cookieWall.style.display = "none"; // Keep cookie wall visible for reconsideration
+                // You can add logic here for handling cookie denial
+            });
+        });
+    </script>
 
-        <style>
-            wistia-player[media-id="rifkn82hwr"]:not(:defined) {
-                background: center / contain no-repeat url("https://fast.wistia.com/embed/medias/rifkn82hwr/swatch");
-                display: block;
-                filter: blur(5px);
-                padding-top: 56.25%;
-            }
-        </style>
-    </head>
-    <body class="content-page">
-        <div class="language-toggle">
-            <img src="images/nl-flag.svg" alt="Dutch" id="lang-nl" class="lang-toggle" data-lang="nl" />
-            <img src="images/en-flag.svg" alt="English" id="lang-en" class="lang-toggle" data-lang="en" />
-        </div>
+    <!--<script src="https://fast.wistia.com/player.js" async></script> -->
+    <script src="https://fast.wistia.com/embed/rifkn82hwr.js" async type="module"></script>
+
+    <style>
+        wistia-player[media-id="rifkn82hwr"]:not(:defined) {
+            background: center / contain no-repeat url("https://fast.wistia.com/embed/medias/rifkn82hwr/swatch");
+            display: block;
+            filter: blur(5px);
+            padding-top: 56.25%;
+        }
+    </style>
+</head>
+
+<body class="content-page">
+    <div class="language-toggle">
+        <img src="images/nl-flag.svg" alt="Dutch" id="lang-nl" class="lang-toggle" data-lang="nl" />
+        <img src="images/en-flag.svg" alt="English" id="lang-en" class="lang-toggle" data-lang="en" />
+    </div>
+    <nav>
         <a href="index.html" class="back-arrow" id="back-link">&#8592; Back</a>
+    </nav>
+    <main>
         <div class="content">
             <h1 id="content-header">Korte film</h1>
-            <p id="content-text">In een korte film krijgt u een indruk van de kerk en haar sfeer. Mocht de film niet werken, bekijk hem dan via <a href='https://pastoorvanars.wistia.com/medias/rifkn82hwr' target='_blank' rel='noopener noreferrer'>deze link</a>.</p>
+            <p id="content-text">In een korte film krijgt u een indruk van de kerk en haar sfeer. Mocht de film niet
+                werken, bekijk hem dan via <a href='https://pastoorvanars.wistia.com/medias/rifkn82hwr' target='_blank'
+                    rel='noopener noreferrer'>deze link</a>.</p>
             <div id="wistia-player-div" class="wistia-player-container">
                 <wistia-player id="video" media-id="rifkn82hwr" seo="false" aspect="1.7777777777777777"></wistia-player>
             </div>
             <div id="error-message" class="review" style="display: none">
                 <p id="content-text2">The video could not be played. You can view it directly on the platform:</p>
                 <p>
-                    <a id="platform-link" href="https://pastoorvanars.wistia.com/medias/rifkn82hwr" target="_blank"
-                        >link</a
-                    >
+                    <a id="platform-link" href="https://pastoorvanars.wistia.com/medias/rifkn82hwr"
+                        target="_blank">link</a>
                 </p>
             </div>
             <p id="content-text3">This is the content 2 for the selected item.</p>
-            <div class="small-letters"><p id="content-text4">cookie message</p></div>
+            <div class="small-letters">
+                <p id="content-text4">cookie message</p>
+            </div>
         </div>
+    </main>
+    <footer>
         <div id="cookie-wall" class="cookie-wall">
             <p>
-            Deze website gebruikt cookies voor een betere werking, zodat hier de film getoond kan worden. Door op Accepteren te klikken, gaat u akkoord met het gebruik van cookies.<br/><br/>Zie de <a href='privacy.html#cookies' target='_blank'>Privacy</a> pagina voor meer informatie. <br/><br/>
+                Deze website gebruikt cookies voor een betere werking, zodat hier de film getoond kan worden. Door op
+                Accepteren te klikken, gaat u akkoord met het gebruik van cookies.<br /><br />Zie de <a
+                    href='privacy.html#cookies' target='_blank'>Privacy</a> pagina voor meer informatie. <br /><br />
             </p>
             <button id="accept-cookies">Accepteren</button>
             <button id="deny-cookies">Weigeren</button>
         </div>
-    </body>
+    </footer>
+</body>
+
 </html>
