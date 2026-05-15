@@ -281,10 +281,18 @@ body.content-page {
 
 .column-section {
     display: flex;
-    flex-wrap: nowrap; /* Prevent wrapping */
+    flex-wrap: wrap; /* Prevent wrapping */
     margin: 0; /* Optional: Add some margin around the section */
     break-inside: avoid;   /* avoid fragmentation */
 }
+
+
+.column-section::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 
 .column {
     flex: 1; /* Each column takes equal space */
