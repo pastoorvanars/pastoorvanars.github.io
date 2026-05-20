@@ -19,12 +19,18 @@ body {
 
 #content-text p,
 #content-text2 p,
-#content-text3 p {
+#content-text3 p,
+#content-text4 p,
+#content-text5 p,
+#content-text6 p {
   margin: 1em 0;
   line-height: 1.5;
 }
 
-
+h2 {
+  font-size: inherit;   /* use the same size as the parent (e.g., body) */
+  font-weight: bold;    /* make it bold */
+}
 
 a {
     color: darkgreen; /* Change hyperlink color to dark green */
