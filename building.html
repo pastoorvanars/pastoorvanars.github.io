@@ -50,8 +50,14 @@
 
 <body class="content-page">
     <div class="language-toggle">
-        <img src="images/nl-flag.svg" alt="Dutch" id="lang-nl" class="lang-toggle" data-lang="nl" />
-        <img src="images/en-flag.svg" alt="English" id="lang-en" class="lang-toggle" data-lang="en" />
+        <button class="lang-toggle" data-lang="nl" aria-label="Schakel naar Nederlands">
+            <img src="images/nl-flag.svg" alt="NL vlag" />
+            <span class="visually-hidden">Nederlands</span>
+        </button>
+        <button class="lang-toggle" data-lang="en" aria-label="Switch to English">
+            <img src="images/en-flag.svg" alt="EN flag" />
+            <span class="visually-hidden">English</span>
+        </button>
     </div>
     <nav>
         <a href="index.html" class="back-arrow" id="back-link">&#8592; Terug naar begin</a>

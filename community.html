@@ -63,8 +63,14 @@
 
 <body class="content-page">
     <div class="language-toggle">
-        <img src="images/nl-flag.svg" alt="Dutch" id="lang-nl" class="lang-toggle" data-lang="nl" />
-        <img src="images/en-flag.svg" alt="English" id="lang-en" class="lang-toggle" data-lang="en" />
+        <button class="lang-toggle" data-lang="nl" aria-label="Schakel naar Nederlands">
+            <img src="images/nl-flag.svg" alt="NL vlag" />
+            <span class="visually-hidden">Nederlands</span>
+        </button>
+        <button class="lang-toggle" data-lang="en" aria-label="Switch to English">
+            <img src="images/en-flag.svg" alt="EN flag" />
+            <span class="visually-hidden">English</span>
+        </button>
     </div>
     <nav>
         <a href="index.html" class="back-arrow" id="back-link">&#8592; Terug naar begin</a>
@@ -89,7 +95,8 @@
                         plaats.</p>
                 </div>
                 <div>
-                    <img id="vert-image" src="images/tile_community.jpg" alt="Een recente kleurfoto van een volle kerkzaal." class="wrap-image-left" />
+                    <img id="vert-image" src="images/tile_community.jpg"
+                        alt="Een recente kleurfoto van een volle kerkzaal." class="wrap-image-left" />
                     <p id="content-text2"></p>
                 </div>
             </div>
@@ -97,7 +104,8 @@
         <section class="column-section">
             <div class="column left-column">
                 <div>
-                    <img id="vert-image" src="images/kwd.jpg" alt="Een afbeelding van een kring van kinderen." class="wrap-image-right" />
+                    <img id="vert-image" src="images/kwd.jpg" alt="Een afbeelding van een kring van kinderen."
+                        class="wrap-image-right" />
                     <p id="content-text3"></p>
                 </div>
                 <!--

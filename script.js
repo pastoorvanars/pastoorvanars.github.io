@@ -65,6 +65,7 @@ async function setupLanguageToggle() {
     langToggles.forEach((toggle) => {
         toggle.addEventListener("click", async () => {
             const selectedLang = toggle.getAttribute("data-lang");
+            document.documentElement.lang = selectedLang;
             const pageName = window.location.pathname.split("/").pop().split(".")[0] || "index"; // Get the page name or default to 'index'
             localStorage.setItem("language", selectedLang); // Store the selected language
             console.log("pagename = -", pageName, "-");
@@ -84,6 +85,8 @@ async function setupLanguageToggle() {
 // Load translations when the document is fully loaded
 document.addEventListener("DOMContentLoaded", async () => {
     const lang = localStorage.getItem("language") || "nl"; // Default to Dutch
+    document.documentElement.lang = lang;
+    
     const pageName = window.location.pathname.split("/").pop().split(".")[0] || "index"; // Get the page name or default to 'index'
 
     // Check if the pageName is empty, which indicates the default page
