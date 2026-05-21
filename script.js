@@ -64,7 +64,10 @@ async function setupLanguageToggle() {
     const langToggles = document.querySelectorAll(".lang-toggle");
     langToggles.forEach((toggle) => {
         toggle.addEventListener("click", async () => {
-            const selectedLang = toggle.getAttribute("data-lang");
+            const selectedLang = toggle.getAttribute("data-lang");            
+            if (navigator.vibrate) {
+                navigator.vibrate(10);
+            }
             document.documentElement.lang = selectedLang;
             const pageName = window.location.pathname.split("/").pop().split(".")[0] || "index"; // Get the page name or default to 'index'
             localStorage.setItem("language", selectedLang); // Store the selected language

@@ -73,6 +73,31 @@ a:hover {
   outline-offset: 3px;
 }
 
+.lang-toggle {
+  transition: 
+    transform 0.12s cubic-bezier(0.4, 0, 0.2, 1),
+    filter 0.12s ease,
+    opacity 0.12s ease;
+  will-change: transform;
+}
+
+/* Press down */
+.lang-toggle:active {
+  transform: scale(0.92);
+  filter: brightness(0.85);
+}
+
+/* Keyboard users */
+.lang-toggle:focus-visible {
+  outline: 2px solid #0078d4;
+  outline-offset: 3px;
+}
+
+/* Optional hover (desktop only feel) */
+.lang-toggle:hover {
+  filter: brightness(1.1);
+}
+
 .grid-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
