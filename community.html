@@ -19,46 +19,6 @@
     <link rel="stylesheet" href="styles.css" />
     <title id="content-title">Content Page</title>
     <script src="script.js" defer></script>
-    <!--
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const cookieWall = document.getElementById("cookie-wall");
-            const acceptButton = document.getElementById("accept-cookies");
-            const denyButton = document.getElementById("deny-cookies");
-            const iframeContainer = document.getElementById("iframe-container");
-
-            // Check the user's consent on page load
-            const cookieConsent = localStorage.getItem("cookieConsent");
-
-            if (cookieConsent === null || cookieConsent === "false") {
-                cookieWall.style.display = "block"; // Show cookie wall if no consent is given
-            } else if (cookieConsent === "true") {
-                loadIframe(); // Load the iframe if consent is granted
-            }
-
-            acceptButton.addEventListener("click", function () {
-                localStorage.setItem("cookieConsent", "true");
-                cookieWall.style.display = "none"; // Hide cookie wall
-                loadIframe(); // Load the iframe after consent is granted
-            });
-
-            denyButton.addEventListener("click", function () {
-                localStorage.setItem("cookieConsent", "false");
-                cookieWall.style.display = "none"; // Keep cookie wall visible
-            });
-
-            function loadIframe() {
-                const iframe = document.createElement("iframe");
-                iframe.title = "Ars vieringen en evenementen";
-                iframe.src = "https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FAmsterdam&showPrint=0&title=Ars%20vieringen%20en%20evenementen&mode=AGENDA&hl=nl&src=YmM1MTM1ZDU1MTI5YjM5YmUyY2ZlMWY5MzY5MWVlYTBmNzk5NzExZjVlNWVhZTQwMjE4YjJmMDdmNDk1ODIwYkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23006400";
-                iframe.style.border = "solid 1px #777";
-                iframe.width = "100%";
-                iframe.height = "600";
-                iframeContainer.appendChild(iframe); // Append the iframe to the container
-            }
-        });
-    </script>
--->
 </head>
 
 <body class="content-page">
@@ -83,11 +43,9 @@
     <main class="multi-col">
         <section class="column-section">
             <div class="column right-column">
-
                 <div>
-
                     <p id="content-text">De geloofsgemeenschap behoort tot <a
-                            href='https://www.rkparochiedevierevangelisten.nl/' target='_blank'
+                         href='https://www.rkparochiedevierevangelisten.nl/' target='_blank'
                             rel='noopener noreferrer'>parochie De Vier Evangelisten</a>. Er zijn wekelijkse vieringen en
                         diverse koren zoals <a href='https://www.koorconnection.nl/' target='_blank'
                             rel='noopener noreferrer'>Connection</a> en <a href='https://gaudete.nl/' target='_blank'
@@ -104,29 +62,22 @@
         <section class="column-section">
             <div class="column left-column">
                 <div>
-                    <img id="vert-image" src="images/kwd.jpg" alt="Een afbeelding van een kring van kinderen."
+                    <img src="images/kwd.jpg" alt="Een afbeelding van een kring van kinderen."
                         class="wrap-image-right" />
                     <p id="content-text3"></p>
                 </div>
-                <!--
-                <div class="content">
-                    <div id="iframe-container"></div>
-                </div>
-                -->
+            </div>
+        </section>        
+        <section class="column-section">
+            <div class="column right-column">
+                <img id="vert-image2" src="images/koorconnection.jpg"
+                    alt="Groepsfoto van Koor Connection genomen in de Ars lente 2026."
+                    class="wrap-image-right" />
+
+                <p id="content-text4"/>
             </div>
         </section>
     </main>
-    <!--
-    <div id="cookie-wall" class="cookie-wall">
-        <p>
-            Deze website gebruikt cookies voor een betere werking, zodat hier de agenda getoond kan worden. Door op
-            Accepteren te klikken, gaat u akkoord met het gebruik van cookies.<br /><br />Zie de <a
-                href='privacy.html#cookies' target='_blank'>Privacy</a> pagina voor meer informatie. <br /><br />
-        </p>
-        <button id="accept-cookies">Accepteer</button>
-        <button id="deny-cookies">Weiger</button>
-    </div>
-    -->
 </body>
 
 
