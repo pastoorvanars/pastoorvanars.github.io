@@ -35,9 +35,6 @@ h2 {
 a {
     color: darkgreen; /* Change hyperlink color to dark green */
     background-color: lightgrey; /* Add light grey background color */
-    /*padding: 5px; /* Optional: Add some padding for better appearance */
-    /*text-decoration: none;*/ /* Optional: Remove underline from links */
-    /*border-radius: 4px; /* Optional: Add rounded corners */
 }
 
 a:hover {
@@ -110,8 +107,6 @@ a:hover {
 .grid-item {
     position: relative; /* Position relative for overlay */
     overflow: hidden; /* Ensures images fit within the grid item */
-    /*text-decoration: none; /* Remove underline from links */
-
     cursor: pointer; /* Change cursor to pointer on hover */
 }
 
@@ -121,9 +116,6 @@ a:hover {
     object-fit: cover; /* Cover the grid item while maintaining aspect ratio */
     display: block; /* Remove bottom space */
     transition: filter 0.3s ease; /* Smooth transition for blur effect */
-}
-
-.grid-item img {
     filter: blur(2px); /* Blur effect always applied */
 }
 
@@ -150,14 +142,13 @@ a:hover {
 }
 
 .grid-item:hover .overlay {
-    /* opacity: 0;  Hide overlay on hover */
     background-color: rgba(0, 0, 0, 0); /* transparent background on hoover*/
     text-shadow: 
     0 0 5px rgba(0, 0, 0, 0.8),
-0 0 10px rgba(0, 0, 0, 0.6),
+    0 0 10px rgba(0, 0, 0, 0.6),
     0 0 20px rgba(0, 0, 0, 0.4),
     0 0 30px rgba(0, 0, 0, 0.2);
-font-size: 1.75em;
+    font-size: 1.75em;
 }
 
 .hidden-on-small {
@@ -366,13 +357,6 @@ body.content-page {
     width: 80%; /* Could be more or less, depending on screen size */
     max-width: 600px; /* Increased maximum width */
     border-radius: 5px; /* Rounded corners */
-}
-
-.close-button {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
 }
 
 .close-button:hover,
@@ -592,6 +576,10 @@ body.content-page {
     color: white; /* Button color */
     cursor: pointer; /* Pointer cursor on hover */
     z-index: 1001; /* Ensure it's above other content */
+        color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
 .modal-image {
@@ -660,14 +648,6 @@ body.content-page {
   box-shadow: 0 0 0 2px rgba(0, 128, 0, 0.45);
 }
 
-/* Utility to visually hide accessible text but keep it for screen readers */
-.sr-only {
-  position: absolute !important;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
-  overflow: hidden; clip: rect(0,0,1px,1px);
-  white-space: nowrap; border: 0;
-}
 
 
 /* === Guides grid === */
@@ -735,6 +715,7 @@ body.content-page {
 .guide-name {
   display: -webkit-box;
   -webkit-line-clamp: 1;
+  line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -747,6 +728,10 @@ body.content-page {
   padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+
+  clip: rect(0 0 0 0);      /* older browsers */
+  clip-path: inset(50%);    /* modern browsers */
+
   white-space: nowrap;
+  border: 0;
 }

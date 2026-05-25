@@ -82,6 +82,7 @@
                 link.href = entry.URL;
                 link.textContent = entry.Name;
                 link.target = "_blank";
+                link.rel = "noopener noreferrer";
                 link.classList.add("review-link");
                 nameElement.appendChild(link);
             } else {
@@ -145,7 +146,7 @@
             });
             /* Screen reader text to describe the icon */
             const sr = document.createElement("span");
-            sr.className = "sr-only";
+            sr.className = "visually-hidden";
             sr.textContent = "Permalink naar dit gastboek-item";
             permalink.appendChild(sr);
 
@@ -157,11 +158,10 @@
         function openImageModal(imageSrc) {
             const modal = document.createElement("div");
             modal.className = "image-modal-guestbook ";
-            //modal.title = "Klik om te sluiten";
 
             const fullImage = document.createElement("img");
             fullImage.src = imageSrc;
-            fullImage.className = "modal-image-guestbook ";
+            fullImage.className = "modal-image-guestbook";
 
             modal.appendChild(fullImage);
             document.body.appendChild(modal);
