@@ -174,6 +174,17 @@ a:hover {
     border-radius: 8px;          /* nice rounded corners */
 }
 
+/* "Subclass" with larger image */
+.wrap-image-right.large {
+  width: clamp(180px, 60%, 320px);  /* responsive width constraints */
+}
+
+/* "Subclass" with larger image */
+.wrap-image-left.large {
+  width: clamp(180px, 60%, 320px);  /* responsive width constraints */
+}
+
+
 
 
 /* Styles for the multi-column layout */
